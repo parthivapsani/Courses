@@ -1,0 +1,6 @@
+Unfortunately, due to a heavy school workload at the time of upload, I am unable to enact the changes I was planning on completing.
+
+Upon inspection of the JPMorgan Perspective repository, here are the changes I identified and planned on making:
+ - Dark mode toggle
+ - Fixing the X and Y axis labels such that they don't overlap dense data labels
+ - Having on-page sliders and text fields to resize the perspective frame and adjust the speed of data query
