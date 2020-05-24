@@ -1,7 +1,8 @@
 .DS_Store
 .gitmodules
 
+# JPMorgan
 JPMorgan/Module 2/JPMC-tech-task-2-PY3/node_modules/
 JPMorgan/Module 3/JPMC-tech-task-3-PY3/node_modules/
-
 JPMorgan/Module 3/Module3.MOV
+
