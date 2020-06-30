@@ -23,3 +23,8 @@ This course was taken as part of the Google CSSI-Coursera 2020 program, sponsore
     * Approximation Algorithms
 * **Week 5 - Streaming Algorithms**
     * Finding Heavy Hitters in Data Streams
+
+Submission Notes:
+
+Since solutions are written in C++, the files are compiled using the following: 
+```g++ -pipe -O2 -std=c++14 <filename> -lm```
