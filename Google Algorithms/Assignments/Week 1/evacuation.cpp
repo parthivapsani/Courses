@@ -1,7 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <queue>
+#include <climits>
 
 using std::vector;
+using std::queue;
 
 /* This class implements a bit unusual scheme for storing edges of the graph,
  * in order to retrieve the backward edge for a given edge quickly. */
@@ -19,7 +22,9 @@ private:
     vector<vector<size_t> > graph;
 
 public:
-    explicit FlowGraph(size_t n): graph(n) {}
+    explicit FlowGraph(size_t n, size_t m): graph(n) {
+        edges.reserve(m * 2);  // Presize vector with edge count * 2 for both edge directions
+    }
 
     void add_edge(int from, int to, int capacity) {
         /* Note that we first append a forward edge and then a backward edge,
@@ -60,7 +65,7 @@ public:
 FlowGraph read_data() {
     int vertex_count, edge_count;
     std::cin >> vertex_count >> edge_count;
-    FlowGraph graph(vertex_count);
+    FlowGraph graph(vertex_count, edge_count);
     for (int i = 0; i < edge_count; ++i) {
         int u, v, capacity;
         std::cin >> u >> v >> capacity;
@@ -69,9 +74,47 @@ FlowGraph read_data() {
     return graph;
 }
 
+bool BFS(FlowGraph& graph, int source, int sink, vector<int>& previousNodes) {
+    // BFS for Edmonds-Karp
+    queue<int> explored;
+    explored.push(source);
+    bool sourceAndSink = false;
+    std::fill(previousNodes.begin(), previousNodes.end(), -1);
+    while(!explored.empty()) {
+        int current = explored.front();
+        explored.pop();
+        for (u_long id : graph.get_ids(current)) {
+            FlowGraph::Edge edge = graph.get_edge(id);
+            if (previousNodes[edge.to] == -1 && edge.capacity > edge.flow && edge.to != source) {
+                previousNodes[edge.to] = id;
+                if (edge.to == sink) {
+                    sourceAndSink = true;
+                }
+                explored.push(edge.to);
+            }
+        }
+    }
+    return sourceAndSink;
+}
+
 int max_flow(FlowGraph& graph, int from, int to) {
     int flow = 0;
-    /* your code goes here */
+    vector<int> previousNodes(graph.size());
+    // Run BFS while the graph has not been fully searched
+    do {
+        if(BFS(graph, from, to, previousNodes)) {
+            int minFlow = INT_MAX;  // Max value for comparison until reassigned
+            // Get minimum flow from the smallest cut that hasn't already been traversed
+            for (int id = previousNodes[to]; id != -1; id = previousNodes[graph.get_edge(id).from]) {
+                minFlow = std::min(minFlow, graph.get_edge(id).capacity - graph.get_edge(id).flow);
+            }
+            // Update the flow and residual graph
+            for (int id = previousNodes[to]; id != -1; id = previousNodes[graph.get_edge(id).from]) {
+                graph.add_flow(id, minFlow);
+            }
+            flow += minFlow;
+        }
+    } while (previousNodes[to] != -1);
     return flow;
 }
 
@@ -79,6 +122,6 @@ int main() {
     std::ios_base::sync_with_stdio(false);
     FlowGraph graph = read_data();
 
-    std::cout << max_flow(graph, 0, graph.size() - 1) << "\n";
+    std::cout << max_flow(graph, 0, int(graph.size() - 1)) << "\n";
     return 0;
 }
