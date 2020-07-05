@@ -2,17 +2,25 @@
 #include <iostream>
 #include <vector>
 
-const double EPS = 1e-6;
-const int PRECISION = 20;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::swap;
+using std::fabs;
+using std::move;
+using std::fixed;
+using std::vector;
 
-typedef std::vector<double> Column;
-typedef std::vector<double> Row;
-typedef std::vector<Row> Matrix;
+const int PRECISION = 6;
+
+typedef vector<double> Column;
+typedef vector<double> Row;
+typedef vector<Row> Matrix;
 
 struct Equation {
-    Equation(const Matrix &a, const Column &b):
-        a(a),
-        b(b)
+    Equation(Matrix a, Column b):
+        a(move(a)),
+        b(move(b))
     {}
 
     Matrix a;
@@ -31,32 +39,37 @@ struct Position {
 
 Equation ReadEquation() {
     int size;
-    std::cin >> size;
-    Matrix a(size, std::vector <double> (size, 0.0));
+    cin >> size;
+    Matrix a(size, vector <double> (size, 0.0));
     Column b(size, 0.0);
     for (int row = 0; row < size; ++row) {
         for (int column = 0; column < size; ++column)
-            std::cin >> a[row][column];
-        std::cin >> b[row];
+            cin >> a[row][column];
+        cin >> b[row];
     }
     return Equation(a, b);
 }
 
-Position SelectPivotElement(
-  const Matrix &a, 
-  std::vector <bool> &used_rows, 
-  std::vector <bool> &used_columns) {
-    // This algorithm selects the first free element.
-    // You'll need to improve it to pass the problem.
+Position SelectPivotElement(const Matrix &a,vector <bool> &used_rows, vector <bool> &used_columns) {
+    // Finds the row with the leftmost nonzero value
     Position pivot_element(0, 0);
     while (used_rows[pivot_element.row])
         ++pivot_element.row;
     while (used_columns[pivot_element.column])
         ++pivot_element.column;
+
+    // Finds the pivot with the largest absolute value
+    double maxVal = 0.0;
+    for (int x = pivot_element.row, size = a.size(); x < size; ++x) {
+        if (fabs(a[x][pivot_element.column]) > fabs(maxVal)) {
+            maxVal = a[x][pivot_element.column];
+            pivot_element.row = x;
+        }
+    }
     return pivot_element;
 }
 
-void SwapLines(Matrix &a, Column &b, std::vector <bool> &used_rows, Position &pivot_element) {
+void SwapLines(Matrix &a, Column &b, vector <bool> &used_rows, Position &pivot_element) {
     std::swap(a[pivot_element.column], a[pivot_element.row]);
     std::swap(b[pivot_element.column], b[pivot_element.row]);
     std::swap(used_rows[pivot_element.column], used_rows[pivot_element.row]);
@@ -64,10 +77,25 @@ void SwapLines(Matrix &a, Column &b, std::vector <bool> &used_rows, Position &pi
 }
 
 void ProcessPivotElement(Matrix &a, Column &b, const Position &pivot_element) {
-    // Write your code here
+    // Scale the pivot
+    const double divisor = a[pivot_element.row][pivot_element.column];
+    const int size = a.size();
+    for (int y = pivot_element.column; y < size; ++y) {
+        a[pivot_element.row][y] /= divisor;
+    }
+    b[pivot_element.row] /= divisor;
+
+    // Reduce the pivot
+    for (int x = pivot_element.row + 1; x < size; ++x) {
+        double scalar = a[x][pivot_element.column];
+        for (int y = pivot_element.column; y < size; ++y) {
+            a[x][y] -= (a[pivot_element.row][y] * scalar);
+        }
+        b[x] -= (b[pivot_element.row] * scalar);
+    }
 }
 
-void MarkPivotElementUsed(const Position &pivot_element, std::vector <bool> &used_rows, std::vector <bool> &used_columns) {
+void MarkPivotElementUsed(const Position &pivot_element, vector <bool> &used_rows, vector <bool> &used_columns) {
     used_rows[pivot_element.row] = true;
     used_columns[pivot_element.column] = true;
 }
@@ -77,8 +105,8 @@ Column SolveEquation(Equation equation) {
     Column &b = equation.b;
     int size = a.size();
 
-    std::vector <bool> used_columns(size, false);
-    std::vector <bool> used_rows(size, false);
+    vector <bool> used_columns(size, false);
+    vector <bool> used_rows(size, false);
     for (int step = 0; step < size; ++step) {
         Position pivot_element = SelectPivotElement(a, used_rows, used_columns);
         SwapLines(a, b, used_rows, pivot_element);
@@ -86,19 +114,29 @@ Column SolveEquation(Equation equation) {
         MarkPivotElementUsed(pivot_element, used_rows, used_columns);
     }
 
+     for (int x = size - 1; x; --x) {
+         for (int y = 0; y != x; ++y) {
+             b[y] -= a[y][x] * b[x];
+             a[y][x] = 0;
+         }
+     }
+
     return b;
 }
 
 void PrintColumn(const Column &column) {
     int size = column.size();
-    std::cout.precision(PRECISION);
+    cout.precision(PRECISION);
     for (int row = 0; row < size; ++row)
-        std::cout << column[row] << std::endl;
+        cout << fixed << column[row] << " ";
+    cout << endl;
 }
 
 int main() {
     Equation equation = ReadEquation();
-    Column solution = SolveEquation(equation);
-    PrintColumn(solution);
+    if (equation.a.size()) {
+        Column solution = SolveEquation(equation);
+        PrintColumn(solution);
+    }
     return 0;
 }
