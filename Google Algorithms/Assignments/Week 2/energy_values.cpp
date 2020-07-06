@@ -2,14 +2,7 @@
 #include <iostream>
 #include <vector>
 
-using std::cin;
-using std::cout;
-using std::endl;
-using std::swap;
-using std::fabs;
-using std::move;
-using std::fixed;
-using std::vector;
+using namespace std;
 
 const int PRECISION = 6;
 
@@ -18,20 +11,18 @@ typedef vector<double> Row;
 typedef vector<Row> Matrix;
 
 struct Equation {
-    Equation(Matrix a, Column b):
-        a(move(a)),
-        b(move(b))
-    {}
+    Equation(Matrix a, Column b) :
+            a(move(a)),
+            b(move(b)) {}
 
     Matrix a;
     Column b;
 };
 
 struct Position {
-    Position(int column, int row):
-        column(column),
-        row(row)
-    {}
+    Position(int column, int row) :
+            column(column),
+            row(row) {}
 
     int column;
     int row;
@@ -40,7 +31,7 @@ struct Position {
 Equation ReadEquation() {
     int size;
     cin >> size;
-    Matrix a(size, vector <double> (size, 0.0));
+    Matrix a(size, vector<double>(size, 0.0));
     Column b(size, 0.0);
     for (int row = 0; row < size; ++row) {
         for (int column = 0; column < size; ++column)
@@ -50,7 +41,7 @@ Equation ReadEquation() {
     return Equation(a, b);
 }
 
-Position SelectPivotElement(const Matrix &a,vector <bool> &used_rows, vector <bool> &used_columns) {
+Position SelectPivotElement(const Matrix &a, vector<bool> &used_rows, vector<bool> &used_columns) {
     // Finds the row with the leftmost nonzero value
     Position pivot_element(0, 0);
     while (used_rows[pivot_element.row])
@@ -69,7 +60,7 @@ Position SelectPivotElement(const Matrix &a,vector <bool> &used_rows, vector <bo
     return pivot_element;
 }
 
-void SwapLines(Matrix &a, Column &b, vector <bool> &used_rows, Position &pivot_element) {
+void SwapLines(Matrix &a, Column &b, vector<bool> &used_rows, Position &pivot_element) {
     std::swap(a[pivot_element.column], a[pivot_element.row]);
     std::swap(b[pivot_element.column], b[pivot_element.row]);
     std::swap(used_rows[pivot_element.column], used_rows[pivot_element.row]);
@@ -95,7 +86,7 @@ void ProcessPivotElement(Matrix &a, Column &b, const Position &pivot_element) {
     }
 }
 
-void MarkPivotElementUsed(const Position &pivot_element, vector <bool> &used_rows, vector <bool> &used_columns) {
+void MarkPivotElementUsed(const Position &pivot_element, vector<bool> &used_rows, vector<bool> &used_columns) {
     used_rows[pivot_element.row] = true;
     used_columns[pivot_element.column] = true;
 }
@@ -105,8 +96,8 @@ Column SolveEquation(Equation equation) {
     Column &b = equation.b;
     int size = a.size();
 
-    vector <bool> used_columns(size, false);
-    vector <bool> used_rows(size, false);
+    vector<bool> used_columns(size, false);
+    vector<bool> used_rows(size, false);
     for (int step = 0; step < size; ++step) {
         Position pivot_element = SelectPivotElement(a, used_rows, used_columns);
         SwapLines(a, b, used_rows, pivot_element);
@@ -114,12 +105,12 @@ Column SolveEquation(Equation equation) {
         MarkPivotElementUsed(pivot_element, used_rows, used_columns);
     }
 
-     for (int x = size - 1; x; --x) {
-         for (int y = 0; y != x; ++y) {
-             b[y] -= a[y][x] * b[x];
-             a[y][x] = 0;
-         }
-     }
+    for (int x = size - 1; x; --x) {
+        for (int y = 0; y != x; ++y) {
+            b[y] -= a[y][x] * b[x];
+            a[y][x] = 0;
+        }
+    }
 
     return b;
 }
