@@ -36,8 +36,7 @@ struct ConvertILPToSat {
                     cIndex = 0;
                     for (int z = 0; z < row.size(); ++z) {
                         if (row[z] != 0) {
-                            clauses += combinations[cIndex] ? (to_string(-(z + 1)) + " ") : (to_string(z + 1) + " ");
-                            ++cIndex;
+                            clauses += combinations[cIndex++] ? (to_string(-(z + 1)) + " ") : (to_string(z + 1) + " ");
                             clause = true;
                         }
                     }
