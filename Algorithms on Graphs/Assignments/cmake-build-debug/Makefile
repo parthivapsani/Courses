@@ -143,32 +143,32 @@ Assignments/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/build
 .PHONY : Assignments/fast
 
-Week_1/connected_components.o: Week_1/connected_components.cpp.o
+Week_4/dijkstra.o: Week_4/dijkstra.cpp.o
 
-.PHONY : Week_1/connected_components.o
+.PHONY : Week_4/dijkstra.o
 
 # target to build an object file
-Week_1/connected_components.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_1/connected_components.cpp.o
-.PHONY : Week_1/connected_components.cpp.o
+Week_4/dijkstra.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_4/dijkstra.cpp.o
+.PHONY : Week_4/dijkstra.cpp.o
 
-Week_1/connected_components.i: Week_1/connected_components.cpp.i
+Week_4/dijkstra.i: Week_4/dijkstra.cpp.i
 
-.PHONY : Week_1/connected_components.i
+.PHONY : Week_4/dijkstra.i
 
 # target to preprocess a source file
-Week_1/connected_components.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_1/connected_components.cpp.i
-.PHONY : Week_1/connected_components.cpp.i
+Week_4/dijkstra.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_4/dijkstra.cpp.i
+.PHONY : Week_4/dijkstra.cpp.i
 
-Week_1/connected_components.s: Week_1/connected_components.cpp.s
+Week_4/dijkstra.s: Week_4/dijkstra.cpp.s
 
-.PHONY : Week_1/connected_components.s
+.PHONY : Week_4/dijkstra.s
 
 # target to generate assembly for a file
-Week_1/connected_components.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_1/connected_components.cpp.s
-.PHONY : Week_1/connected_components.cpp.s
+Week_4/dijkstra.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_4/dijkstra.cpp.s
+.PHONY : Week_4/dijkstra.cpp.s
 
 # Help Target
 help:
@@ -179,9 +179,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Assignments"
-	@echo "... Week_1/connected_components.o"
-	@echo "... Week_1/connected_components.i"
-	@echo "... Week_1/connected_components.s"
+	@echo "... Week_4/dijkstra.o"
+	@echo "... Week_4/dijkstra.i"
+	@echo "... Week_4/dijkstra.s"
 .PHONY : help
 
 

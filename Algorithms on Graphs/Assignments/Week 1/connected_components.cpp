@@ -20,10 +20,10 @@ void bfs(vector<vector<int>> &adj, vector<bool> &visited, int start) {
     }
 }
 
-int number_of_components(vector<vector<int>> &adj, int size) {
+int number_of_components(vector<vector<int>> &adj) {
     int connectedComponents = 0;
-    vector<bool> visited(size, false);
-    for (int x = 0; x < size; ++x) {
+    vector<bool> visited(adj.size(), false);
+    for (int x = 0; x < adj.size(); ++x) {
         if (!visited[x]) {
             bfs(adj, visited, x);
             ++connectedComponents;
@@ -42,5 +42,5 @@ int main() {
         adj[x - 1].push_back(y - 1);
         adj[y - 1].push_back(x - 1);
     }
-    cout << number_of_components(adj, n);
+    cout << number_of_components(adj);
 }
