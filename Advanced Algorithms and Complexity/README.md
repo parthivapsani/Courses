@@ -26,5 +26,6 @@ This course was taken as part of the Google CSSI-Coursera 2020 program, sponsore
 
 Submission Notes:
 
-Since solutions are written in C++, the files are compiled using the following: 
+Since solutions are written in C++, the files are compiled using the following:
+
 ```g++ -pipe -O2 -std=c++14 <filename> -lm```
