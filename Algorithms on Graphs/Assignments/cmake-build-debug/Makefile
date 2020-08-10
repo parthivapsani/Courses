@@ -143,32 +143,32 @@ Assignments/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/build
 .PHONY : Assignments/fast
 
-Week_4/dijkstra.o: Week_4/dijkstra.cpp.o
+Week_5/connecting_points.o: Week_5/connecting_points.cpp.o
 
-.PHONY : Week_4/dijkstra.o
+.PHONY : Week_5/connecting_points.o
 
 # target to build an object file
-Week_4/dijkstra.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_4/dijkstra.cpp.o
-.PHONY : Week_4/dijkstra.cpp.o
+Week_5/connecting_points.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_5/connecting_points.cpp.o
+.PHONY : Week_5/connecting_points.cpp.o
 
-Week_4/dijkstra.i: Week_4/dijkstra.cpp.i
+Week_5/connecting_points.i: Week_5/connecting_points.cpp.i
 
-.PHONY : Week_4/dijkstra.i
+.PHONY : Week_5/connecting_points.i
 
 # target to preprocess a source file
-Week_4/dijkstra.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_4/dijkstra.cpp.i
-.PHONY : Week_4/dijkstra.cpp.i
+Week_5/connecting_points.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_5/connecting_points.cpp.i
+.PHONY : Week_5/connecting_points.cpp.i
 
-Week_4/dijkstra.s: Week_4/dijkstra.cpp.s
+Week_5/connecting_points.s: Week_5/connecting_points.cpp.s
 
-.PHONY : Week_4/dijkstra.s
+.PHONY : Week_5/connecting_points.s
 
 # target to generate assembly for a file
-Week_4/dijkstra.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_4/dijkstra.cpp.s
-.PHONY : Week_4/dijkstra.cpp.s
+Week_5/connecting_points.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assignments.dir/build.make CMakeFiles/Assignments.dir/Week_5/connecting_points.cpp.s
+.PHONY : Week_5/connecting_points.cpp.s
 
 # Help Target
 help:
@@ -179,9 +179,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Assignments"
-	@echo "... Week_4/dijkstra.o"
-	@echo "... Week_4/dijkstra.i"
-	@echo "... Week_4/dijkstra.s"
+	@echo "... Week_5/connecting_points.o"
+	@echo "... Week_5/connecting_points.i"
+	@echo "... Week_5/connecting_points.s"
 .PHONY : help
 
 
