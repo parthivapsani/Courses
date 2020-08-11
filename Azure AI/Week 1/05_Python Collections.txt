@@ -1,0 +1,92 @@
+There are three main
+Python collections that I want to talk about in our
+review of Python basics. The first one is a list. A list is a link to
+one-dimensional array. Then we implement
+a list as you can see here is with square brackets. Let me go ahead and print
+the type of my list and get the elements in the list back by doing a print command
+here as well. You can see that the
+class is a list. Notice that each of the elements of a list can be of
+different data types, so it's element Number 3 or actually element Number 2
+because we're zero numbered. We've got a 3.0 Which is a float. We'll get to element Number 5, we've got a hello as well. To access individual
+elements of a list, we can call up zero
+numbered index first. So my list is zero, or it my list two or my
+list four for example. As you can see we have
+a class of string, a class float and a class of int. We can specify a range for elements that I want back for
+example in my list is 0-2. It comes back as 1, 2. Based on a fact that, remember we're not
+inclusive in Pythons. So we're going to start
+at element Number 0, and we're going to go up to but not include element Number 2. So what I do, if I specify zero colon two it's going to bring me back the first two elements. We can also specify
+print my list two colon. So start at item Number 2 and element Number 2 and go to the end of the list. I'll go ahead and show
+you, you can reference the individual
+functions here as well. So just go and do. I'll
+print my list of zero. The answer to that should be one. Then I'm going to list
+each individual element has their own data types. So print my list of one
+gives us back an int. We are going to specify
+on my list of zero. If we do a print my list of two, notice it comes back and
+tells us that it's 3.0. We can see there is a float, and then if we were to, we'll print my list of four we can see that it was
+a string as well. Lists are immutable and they
+are considered objects. This is one of the nice
+things about Python is we can implement
+methods of the objects. So this is an insert. My list.insert at element five go ahead and list
+the fifth element. We're going to go
+and print a my list. If we remove hello, hello will know the first
+instance of the stated value. We're going to print out
+length of my list which is a built-in Python
+function that will give us the number of elements back in a list. We're going
+to be able to append. It appends data to
+the end of a list. If you want to see more
+available methods off of lists you can go
+ahead and do at my list.tab here and a tab complete. There's an append,
+and a clear, a copy, an account, an index, a pop, a remove, a reverse and a sort. All sorts of different
+specific things that you can do with
+list to objects. Let's go ahead and run this. Here you can see the
+when do my list.insert, it does insert the fifth
+element at the fifth element. Great movie by the way.
+I would do a remove of hello that gets rid of
+the first instance of hello. We print a length of my list which is going
+to give us back five because that's how many elements we
+have in our list. We're going to append to
+the end of our list by list.append that's
+going to give us the last to hurrah at the
+end of our list as well. Also I have the idea of a tuple. Tuples are immutable. So you can see what we're going to
+implement a tuple by specifying a variable
+and assign it to a list of values that are
+surrounded by parentheses, and are comma separated. So indexing works the same way as a list when you
+implement tuples. You can now specify ranges. You can specify individual
+values and their types but object reassignment is
+not actually allowed in tuples in this last reference
+will actually error out. If you notice. So if I
+implement a tuple by specifying a variable in a set of elements surrounded
+by parentheses, you can see that it comes
+back as a tuple type. We can specify indexing and ranges by including the
+tuple and a set of brackets. Again return the specific value of an element by specifying
+that element in the brackets. If we tried to reassign an index reference to
+number five notice that it does error out,
+and it definitely will. The third type of
+collection that I would like to talk to you
+about are dictionaries. Dictionaries are immutable
+key-value pairs. Here's one of the main ways
+to implement dictionaries. Notice that I've
+got say a list of dictionary items where there's
+implemented as list in d1. So just go ahead and do a print. I'll type d1 here. So I've got a list
+of dictionary items. Notice the dictionary items are implemented by strictly
+brackets on the outside, then we have key
+value pairs where the first element is the key and the second
+element is the value. You can see that
+this is a list of dictionary items that
+have I have right now. So I'm going to go
+ahead and print. Notice that we're referencing
+the list elements by list the element number zero and list
+element number one, and then we can specify the
+specific key-value pair. We went out of
+there by specifying the key as an index
+references as well. So d0 name is going to be Bob. D0 job is going to
+be project manager. D1 name is going to be Joe. D1, reference one is this
+element of our list. With it we are going to, we want the value associated with the job entry of that key. We know that the data scientist does work for the
+project manager. So again we're going to
+reference d1 zero name. This is what comes back. Bob is a project manager. So Bob is the value associated with the name reference
+that we put in the index. Project manager's the value that we have associated
+with the job key. In the first image zero
+elements of our list, and then we can see that Joe is a data scientist
+who works for Bob. So those are the three
+main collections that I want to discuss
+with you in Python.

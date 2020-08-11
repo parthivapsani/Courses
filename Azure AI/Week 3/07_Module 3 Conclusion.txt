@@ -1,0 +1,9 @@
+In conclusion, we've covered Microsoft's Cognitive
+API services to include the vision API, the language API, the search API, the speech API, and
+the decision API. We've shown you the resources of how to explore
+each of these APIs. We've shown you how to create cognitive API resources on Azure and I was showing you how to call the created API using the subscription keys
+and the endpoint from both the command line and in an implemented
+Python example. Remember in the bigger picture, this is a choice you have as
+your scoping an AI project. So you can either use a pre-configured model which
+are the examples we're using here or in the next chapters we're going to talk about how you build and train your own model, and then deploy it to
+use it in practice.

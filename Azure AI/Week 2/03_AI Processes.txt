@@ -1,0 +1,38 @@
+Let's discuss the need for a standardized approach
+for AI project management. Why is this important? AI solutions are very important to meet business
+needs these days. Business need to make
+themselves more data-oriented, and use AI in their
+decision-making processes. It just makes sense to implement a standardized approach to
+the data science lifecycle and the overall management
+of your AI team. Now we're going to
+discuss some of the popular project
+management solutions for data science
+and data analytics. The first one we're
+going to focus was knowledge discovery
+in databases, first implemented back in 1996. Divides the process for finding knowledge in data into
+the following steps. Understanding the problem
+and data selection, followed by data cleaning,
+and data transformation. Choosing the data mining task that makes sense
+for your problem, choosing the data
+mining algorithm based on their
+characteristics of your data. Performing the data mining,
+interpreting the results, and deciding how to act on the knowledge
+that you discovered. This is a very
+popular approach to both data analytics
+and data science. We also have CRISP-DM which was published
+shortly after KDD. There was an effort to update this project and this process
+back in 2006 and 2008, and that nothing
+never came out of it. One of the major contributors of data mining was Daimler-Benz, and IBM has implemented as
+part of their SPSS product. CRISP-DM can be described as an iterative approach to
+solving data mining issues. CRISP-DM has six phases:
+business understanding, data understanding,
+data preparation, data modeling, data evaluation, and deployment, and has specific processes
+and deliverables based on each one of these steps. More recently,
+Microsoft came out with a recommended team
+data science process, this is Microsoft's approach to the data science lifecycle. So team-based approach to
+data science projects, that provides resources for each one of the data lifecycle steps. Including business understanding, data acquisition
+and understanding, modeling, deployment,
+and customer acceptance. In the next video, we're
+going to delve down into the Microsoft team
+data science process, tasks, and goals in a
+little more detail.

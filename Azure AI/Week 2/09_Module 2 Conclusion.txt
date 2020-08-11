@@ -1,0 +1,10 @@
+In summary, we've identified artificial intelligence
+tools that are available to us in Azure to include
+the ML service, to include ML Studio, and to include
+cognitive services. We've explained the need for standardized management of
+your Machine Learning process. We also described some popular
+standardized processes to include Knowledge Discovery, the cross industry standard
+process for data mining, and the Microsoft Team
+Data Science Process. We looked at the
+stages and goals and tasks of each of the different stages of the
+Data Science process as well.

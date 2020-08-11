@@ -1,0 +1,40 @@
+Let's come to the
+steps that had a ploy in model we've registered with Azure in docker containers reset. In a new notebook. The first thing that
+we needed to do is connect to our workspace. So we've got a
+workspace item here. Just go ahead and look at the references of this workspace. So WSC workspace for question
+mark and do a Shift Enter. So notice that our workspace call requires our subscription ID, our resource group,
+our workspace name. The workspace class manages the interactions with the Azure Machine Learning workspace, provides convenient
+methods for manipulating workspace and enumerating
+objects within. Here's all the parameters associated with this
+particular call. I'll put you a workspace
+dot and Tab complete. Notice we got compute
+targets we can reference, we've got create,
+we got datasets, we got datastores, we got
+environments we can set up, we've got experiments
+we can set up. What we're going to do
+is we're connect to an existing workspace
+from a config. So we're going to do a
+workspace dot com from config. As you can see here, if we look at the references to this, workspace from config once
+the path that config file was auth and logger and filename. Just go ahead and insert a cell and we'll get to our path. So if we do a bang ls
+dash al right here at my Azure notebook reference, they have a dot Azure
+ML subdirectory. So clicking this dot Azure
+and our subdirectory, notice that I've got my ws underscore couldn't
+figure out json. Let's go ahead and take
+a look at that as well. So we did a bank cat of w of dot azureml slash ws
+underscore config dot json. Number, I has
+subscription number, it has lqa workspace
+one which referenced, has also our resource
+group in there. In this case it's AI demos. So I'll just go ahead and
+complete this reference. Uncomment this line. Yeah, lets go ahead going to
+do a dot com from config. Enter path is going
+to be dot azureml slash ws config dot json. Let's go ahead and run
+that. Then look at the workspace that
+comes back as well. Notice that it has you perform an interactive authentication. So let's go ahead
+and go to this site. It has its entering code
+and here's the code. Let's click on Next. Pick an account. It tells me I've signed into the Cross-platform Command
+Line Interface application. So go ahead and
+close this window. Notice that we have a workspace. The name of the workspace
+is lqai workspace one. The subscription to the
+workspace is b seven a seven seven e blah blah blah. We've got a resource
+group as well. So this is a successfully
+connected workspace

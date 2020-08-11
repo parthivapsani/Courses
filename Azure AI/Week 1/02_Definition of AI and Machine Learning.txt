@@ -1,0 +1,62 @@
+Hello, my name is
+Ronald J Daskovic, and welcome to our lesson
+on definitions of AI. So what is a good definition
+of Artificial Intelligence? You can kind of think of it as the simulation of human
+intelligence in computers. Human intelligence is
+made up of learning, reasoning and problem solving
+based on that learning, and then self-correction when
+they get something wrong. The way that Artificial
+Intelligence is used today is to improve
+services and products. Think about Siri, and
+Cortana and Alexa and how those help us
+in our everyday lives. Subset of AI is actually
+Machine Learning. So what's a good definition
+of Machine Learning? It starts with a set of data. You present that data
+to an ML algorithm. The ML algorithm figures out the important
+relationships and infers a result based on what it learns. That fundamentally differs from an expert system where the
+programmer provides the rules. In the classic case
+of an expert system, if we want to identify
+a cat in a picture, we'll be very verbose in a
+set of rules that we give to the computer to figure
+out what makes up a cat. A cat has certain colors, a cat has whiskers, a cat has ears, a cat has sharp teeth, a cat has big eyes. With a Machine Learning
+algorithm on the other hand, all we're going to do is provide lots of examples of pictures of cats that are labeled
+cat and we're going to let it figure
+out the rules itself. Machine Learning in itself
+could be broken down into Supervised Learning
+and Unsupervised Learning. In the example of cats that I was showing you just before, our pictures of cats that we present to our model
+are actually labeled. It's labeled cat. We train the model, and the trained model
+is used to infer to a new label on the new data. It is important to note that Machine Learning models are
+always inference models. We're never 100 percent sure. A good example of
+Supervised Learning is email spam detection. Is this e-mail a spam or not. Then we can have an application based on whether
+it's a spam or not. Not give us that
+message if it is. A good example of Unsupervised
+Machine Learning on the other hand is when the
+input data has no labels. What we're trying
+to do here is get the algorithm to look for
+patterns in the data, and then quite often, the patterns that we
+find will be used for classification
+problems in the future. A good example of Unsupervised Learning is
+market basket analysis. Types of Supervised
+Machine Learning that we have include regression, where your result is
+going to be continuous, and a good example of that is, how late will the flight be? Classification on the other
+hand is a discreet class, will your fight be
+late? Yes or no. Or in a multivariate example, will your flight be early, will your flight be on time, or will your flight be late? Another good example of
+Supervised Machine Learning is Content-based
+Recommendation where we explicitly state
+movie characteristics and we explicitly know
+the user preferences. For example, I have rated science fiction movies
+that I've seen previously highly so therefore if a movie has a stated
+characteristic of being a science fiction movie, I'm probably going
+to like that movie. Another example would
+be a favorite actor or actress or a favorite
+director for example. Types of Unsupervised
+Machine Learning include clustering. Remember our data is not labeled in unsupervised examples, and what we want to do is discover inherent
+groupings averted. An example of that
+would be grouping customers by their
+purchasing behavior. Another good example is Unsupervised Machine
+Learning where we explore things that are
+often bought together. An example of that would be the beer and diapers
+urban legend, where a father goes into buy
+diapers on Thursday nights, and he's also going to buy beer to get ready
+for the weekend. It's a very highly contested
+hypothesis by the way.

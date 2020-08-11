@@ -1,0 +1,11 @@
+Welcome to Module 4, Model Training
+with Azure Machine Learning Service. In this module, we're going to discuss
+the Azure Machine Learning Service. We're going to create a use
+an Azure Machine Learning Workspace. I'm going to show you how to
+do that programmatically. I'm going to show you how to
+do that via the command line. And we're going to show you how to
+do that graphically in the port. We're then going to show you how
+to train your own model using the Azure Machine Learning Service. And define and
+configure available computer resources for use in model training in Azure. And then we're going to recall how to
+set up an experiment, execute a run. And access a model in
+the Azure Machine Learning Service.

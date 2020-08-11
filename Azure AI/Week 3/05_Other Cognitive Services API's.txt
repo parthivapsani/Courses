@@ -1,0 +1,25 @@
+In addition to cognitive
+services Vision API, the other APIs we have
+include language, speech, search and decision. As you can see here,
+the language API includes text
+analytics, translation, spellcheck, a question
+and answer tool, language understanding
+and an Immersive Reader. The Speech API includes
+speech to text, text to speech,
+speech translation and a new speaker recognition
+capability as well. The search API, this time Microsoft includes
+Spellcheck, Visual Search, Entity Search, New
+Search, Autosuggest, Web Search, Video Search, a Custom Search and a Local Business
+Search as you can see. The decision API includes
+a content moderator, a Personalizer and
+an Anomaly Detector. These tests we're using any cognitive APIs
+very similar to these tests were used
+for computer vision. There's all sorts of
+front ends to try it out. So we're going to cognitive
+services and pick the particular tool
+you want to use. We're going to create
+a cognitive services API from the Azure portal. We're going to
+reference the API Keys on the Quickstart page of the API and call it either on the command line or programmatically as
+we've shown you before. Once again here's the high
+level APIs to include visions, speech, search,
+language and decision.

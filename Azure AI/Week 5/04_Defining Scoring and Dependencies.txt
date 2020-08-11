@@ -1,0 +1,99 @@
+So the next steps for
+deploying an AI model is to build an entry script
+and define dependencies. So let's go ahead and look at the architecture of
+an entry script. Here in Jupyter, you notice
+I'm using the Jupyter matrix to write this file
+out to score.py. In this, the two things that
+this particular entry script does this define an init function and define a red function. The init function make sure model will
+globally available, and the environment that we're spawning in our deployed system. We're going to get a model path. We've already seen this run
+in the previous exercise. Model path with the model
+name of sklearn_bh_lr. In order to be able to
+make that model useable, we actually have to
+de-serialize it from pickle, and that's what this model
+equals joblib.load does. Let's go ahead and look
+at a little more detail about which of these
+things are going to do. So our model path was model.get model path
+of the sklearn_bh_lr. We're going to want to
+download and reference version three of bh_lr.pkl. We're going to do a model
+lib job lib.load of model path and notice it comes back as a a linear
+regression models. So we are going to be able to use that models we reference it. Let's go ahead and
+look at what this job lib.load function
+does within sklearn. Reconstruct a Python object from a file persisted with joblib.com. Remember that's what we did in our previous exercise when
+we saved our file down. The objects said
+that we're going to return a Python object or that was initially
+stored in the file. This function can load a
+numpy array files saved separately during the
+arrays or during the dump. So if you remember
+if we come over here to My Projects and I'm going to look at
+my bh sklearn_lr. py that we saved on earlier and we used to train the model, and we did wrap-ups the
+model with a joblib.dump. We saved the sklearn linear
+regression model object into output /bh_lr.pkl. So what we're doing
+that serialized it into pickle and now we're
+de-serializing it from pickle, and we have to do that
+in our init method. So that's what the
+init must does, and then we're going to
+take a json based to input. That's represented
+in data and you're going to do in np.array of that. So we want to be able to
+reference error data and supply it to the model in the same exact way that
+we did it locally. So in this video, we're going
+to take our raw data input. We're going to load that into a json from our Data Reference. Right. So this is going to
+give us the value of that, and we're going to pipe
+that into an empire array. If you remember,
+we had to do with Data reshape of that to bring it back and make sure that we had a certain number of
+rows with one column. So we needed a
+two-dimensional array, and we're going to return
+our results to list. It's important to
+note that data is going to be a json object. That's why we need
+this json.loads, and we'll verify that. That's working coming up. So see you when I test
+this run out locally. So I'm going to do
+is, I'm going to specify sampled
+equals json.dumps, right of a data with a return
+of 7.353534 for example. Let's go ahead and find
+this function locally, and let's go ahead and
+load in our data sample. Let's go ahead and
+call it run on sample. So you can see the sample
+implements that json.dumps, so it creates me a json object with data
+as the key and a list encapsulated 7.534 as the
+element and as the values. Let's go ahead and define run.data and notice that
+we're going to load our data and reference
+as the data column. It's just going to bring
+us back to the data value. Let's go ahead and
+see what comes back. So you can see that we've loaded our model path
+and we've de-serialized it. We've created a json object
+with data as the key and 7.534 is the list of
+7.3534 is a value. We pass that to our run function and run data, loads my data. So in this case, 7.534 and I can reference that
+by now satisfying data. Let's go ahead and view that. Let's go ahead and do a
+print of json.loads by data and specify data here, and that's to-list by json.loads does give
+me the element back. That's definitely what we want, and we're going to do a
+model.predict of our data, which is a list of 7.3534. Remember, I wanted
+the shape of it to be a a two-dimensional array. So take all of the rows
+and implement one column. So that's why we
+particularly have to do a reshape otherwise
+it will error out, and you can see that it does successfully come up
+with particular result. So if I go back ls, those we have successfully
+built this score.py. Just like we did while
+we're training our model, we also need to build
+the dependencies into our structure when
+we deploy our model. So from this yaml
+quarter dependencies, we send the support, we're
+going to import dependencies, and we're going to instantiate
+that as an object. I'm going to do a
+dependency.set python version, which is one of the
+available options. When they added pip package, sklearn equal 0.20.3 that
+got me in trouble when we want to train because I forgot to us specify a particular version. When I downloaded the pickle file and try to de-serialize
+just a few minutes, I couldn't because the value of the sklearn that was
+implemented as part of the training environment
+was actually 0.21, and my current sklearn
+of 0.20 couldn't do it. So I had to go back
+and change that. When I include numpy
+version 1.16.2, we're going to include
+pandas versions 0.23.4, and we're going to include
+matplotlib version 3, and what we're going to
+do is save that down to a particular yaml file. So one of the options
+we have under the dependencies constructor and object is to save the file. So in our current directory, we're going to see myenv.yml. Prudo bangls, it is there. So here's myenv.yml, let's
+go ahead and do a cat of that to show you what a
+particularly it looks like. So environment specification, the name is Project Environment. The dependencies
+are python 3.6.6. The pip dependencies are
+azureml default sklearn 0.20.3. Numpy 1.16.6, panda is 0.23, and matplotlib 3.0.0, and we're going to use
+the conda-forge and home. That's how we implement a
+entry script and dependencies.
