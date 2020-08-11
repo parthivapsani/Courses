@@ -1,0 +1,162 @@
+Hi. I'm Kirsten Dupart with AWS Training and Certification. Welcome to this
+introductory course on Amazon Machine Learning. I've been with Amazon
+for a year and a half, and I'm currently responsible for curriculum development within the AWS Training and
+Certification organization. I'll begin this course with an overview of machine learning, and we'll talk about how data
+plays an important role. After the overview, we'll discuss an innovative
+way to build smart applications and walk
+through a few use cases, and then we'll wrap up
+with a discussion of the AWS frameworks and services you can use for machine
+learning applications. Machine learning is a subset
+of artificial intelligence. It helps you use historical data to make better
+business decisions. Machine learning is also a process where
+machines take data, analyze it to
+generate predictions, and use those predictions
+to make decisions. Those predictions
+generate results, and those results are used to
+improve future predictions. Machine learning can make
+predictions from huge datasets. It can also optimize utility
+functions and extract hidden patterns and
+structures from those datasets by
+classifying data. This enables a
+software program to learn and make predictions
+in the future. Machine learning enables you to establish a cycle of improvement using the data you
+collect from things like clickstreams,
+purchases, and likes. Machine learning is
+used in a number of ways across a number
+of industries. For example, it can be used to detect fraudulent
+transactions, filter spam emails, flag
+suspicious reviews, and so on. You begin by mining
+large amounts of data to identify patterns among
+the card transactions. With these patterns, you can
+train the machine learning model to flag fraudulent
+transactions. It can also be used to
+personalize content for users by recommending content and
+predictive content loading. Machine learning can be used
+for targeted marketing, matching customers with
+offers they might like, choosing marketing campaigns, and cross-selling or upselling items. Machine learning
+can also be used to automate categorisation
+of documents such as matching
+hiring managers and resumes by learning to
+understand written content. It can be used in customer
+service to provide predictive routing
+of customer emails based on the content
+and the sender, as well as social media
+listening capabilities. Machine Learning systems discover hidden patterns in data, and use these patterns to
+predict patterns in the future. For example, if you're
+analyzing retail data and a product name contains
+words like jeans or jacket, then this product category
+likely belongs to a parallel. Machine learning systems
+learn from examples in the same way that children
+learn language or patterns. It can group data into a summary, and it can also define data in a more granular concise way. Think of machine learning as a combination of
+methods and systems. These methods in systems predict new data based
+on observed data, extract hidden structure
+from the data, summarize data into
+concise descriptions, optimize an action given a cost function
+and observed data, and adapt based on observed data. The field of machine learning
+is often classified into the following broad categories:
+supervised learning, unsupervised learning, and
+reinforcement learning. In supervised learning,
+the inputs to the model including the example outputs
+also known as labels, are known and the model learns to generalize the outputs
+from these examples. In unsupervised learning,
+the labels aren't known. The model finds patterns in structure from the
+data without any help. In reinforcement learning, the model learns by
+interacting with its environment
+and learns to take action to maximize
+the total reward. In supervised learning,
+the inputs to the model in the example
+outputs are provided, and the model learns
+to generalize the outputs from these examples. The human teachers
+experience is used to tell the model which outputs are
+correct and which are not. This doesn't mean
+that the teacher has to be physically present, only that the teachers'
+classifications must be present. With the help of a
+large training dataset, the model learns
+from its error and changes its weight to reduce
+its prediction error. In classification, the output variable is
+a category like color, which could be red,
+blue, or green, and it results in true or false for a particular question. In regression, the output
+variable is a number or a value like weight,
+dollars, or temperature. In unsupervised learning
+which is also called self-organization,
+there's no teacher. It's based solely on
+local information. Here, the model
+uses only the data presented to the network
+without any labels, and it detects the
+emerging properties of the whole dataset. The model then
+constructs patterns from the available information
+without any pre-trained data. In clustering, the model
+discovers groupings in the data like grouping customers based on their
+purchasing behavior. In association, the
+model discovers rules that govern
+large chunks of data, for example customers
+who buy product A, also tend to buy product B. In reinforcement learning,
+a software agent determines the ideal behavior within a specific context for
+a particular problem. The agent takes the input and decides the best action
+for the problem, and then based on the
+results of the action, the agent than receives simple reward feedback to allow it to learn
+from its behavior. The agent is encouraged
+to select an action that maximizes the
+reward in the long-term. This type of machine
+learning algorithm is inspired by behavioral
+psychology. Part of getting useful
+information out of your Machine Learning system is having a smart application. Your smart application will
+use machine learning to analyze your data and
+predict future outcomes, which are necessary to
+make business decisions. This can include using
+machine learning for business questions
+such as predicting customer trends like whether customers will use a
+particular product of yours, or to determine if an
+order is fraudulent. Based on the customer
+data you already have, you can find patterns in
+the data and then generate predictions to drive your product features and improvements. While machine learning is
+a rapidly growing field with an enormous upside
+for companies to use, there are some challenges
+to take into consideration when building your
+machine learning based smart application. For instance, some machine
+learning technology can be complex to use and
+implement appropriately, requiring high levels of expertise that can take
+time to hire or develop. Another challenge is finding the right technology that scales to the needs of customers. Finally, being able to tie machine learning to a business
+application can take time. In other words, refining your models so that
+your product app can use that model productively can
+require a lot of time. These are the three primary considerations you should take into account when building your machine learning
+application. One way to help address
+these challenges could be to use Amazon
+Machine Learning. We have offerings in Amazon
+Machine Learning and Spark on Amazon
+Elastic MapReduce or Amazon EMR for customers
+who want to fully manage platform for building
+models using their own data. For developers and data scientists who want to
+focus on building models, the platform services remove the
+undifferentiated overhead associated with deploying and managing infrastructure
+for training and hosting. Amazon Machine Learning support supervised machine
+learning approaches. These enable you to predict specific machine learning tasks such as binary classification, multiclass classification,
+and regression. Binary classification
+predicts the answer to a yes or no question. For example, is this
+email spam or not spam? Is this product a book or a toy, or is this review written
+by a customer or a robot? Multiclass classification predicts the correct
+category from a list. For example, is this product
+a movie or clothing? Is this movie a romantic,
+comedy, documentary, or thriller, or which category of products is most
+interesting to this customer? Regression predicts the
+value of a numeric variable. For example, what will the temperature be
+in Seattle tomorrow? Or for this product, how many units will sell? Lastly, how many days before the customer stops
+using the application? At a broad level, these
+are the steps involved in building a smart application using Amazon Machine Learning. To train a model,
+you need to create a data source object
+pointing to your data, explore and understand your data, and transform data
+and train your model. To then evaluate and
+optimize the model, you need to understand
+model quality and adjust model interpretation. After that, you can retrieve batch and real-time predictions. Let's take a quick look at a case study for using
+Amazon Machine Learning. Zillow is a company that provides home valuations online
+in the United States. When the company
+needed to provide more timely home
+valuations for customers, they decided to run their
+home valuation tool using Amazon Kinesis for
+data ingestion, and Apache Spark on Amazon EMR for data
+processing and analysis. Now, Zillow runs its
+machine learning tasks in hours instead of days, and it provides more
+accurate valuation data too. I hope you learned a
+little something and we'll continue to explore
+our other courses. Again, I'm Kirsten Dupart with AWS Training and Certification,
+thanks for watching.
