@@ -1,0 +1,93 @@
+Hello. In the previous video, we introduced you to
+the major stages of data life-cycle management to include business understanding, data acquisition
+and understanding, modeling, deployment, and
+customers acceptance. Let's look at each one of
+these in a little more detail. The goals of the business
+understanding stage include defining the
+metrics you need to determine success and identifying data sources available and those you need to
+obtain access to. The specific tasks associated with business
+understanding include defining objectives and
+identifying data sources. The deliverables for this
+particular stage are a charter, a data source's report, and a data dictionary. The second stage of the team data science process is data acquisition
+and understanding. The outcomes of this
+particular stage include producing a high-quality
+dataset that's clean, that features have been added to. Another outcome is development of solution architecture for the data pipeline
+responsible for refreshing and scoring the data regularly to make sure we don't
+have to retrain. The specific tasks associated with this include ingesting data, exploring the data we
+have and setting up a data pipeline to refresh
+and score new data as well. It makes sense
+because we're talking about data acquisition
+and talk about the different data sources and data stores we have
+available to us in Azure. Target environments
+for data ingestion in Azure include:
+Azure Blob Storage, SQL server deployed on Azure
+VM, Azure SQL Database, Hive tables in the case of HD insight, SQL partition tables, On-premises SQL Servers, Azure Machine Learning
+Data-stores and DataSets, provide an abstract reference to source files that only has
+to be referenced once. The modeling stage include finalizing what you want
+your features to be, doing hyper-parameter tuning into picking your best model, making your model
+suitable for production. The tasks include feature engineering and model training and determining suitability. So in Azure machine
+learning service, once you have a
+model that you like, you can then provide your registered model to
+a compute target. The compute targets that can do distributed training
+or remote training for you include:
+Your local computer, a raw remote VM in Azure, Azure Data Lakes Analytics, Azure Machine Learning Compute, Azure Databricks, Azure HD
+Insight, and Azure Batch. So how do you model and implement model training using
+the Azure ML Service? First you create
+a compute target, you attach the compute
+target to your workspace, you implement or
+run configuration to setup the required
+dependencies, you create an experiment, you submit the run to
+the compute environment that you specified earlier, and you wait for the
+run to complete. The next stage is Deployment. The goal of this stage
+is deploy models with the data pipeline to a production or production
+like environment. Those data pipelines can be
+either real-time or batch. Your deployed model can be consumed from various
+applications: websites, spreadsheets, dashboards, line-of-business applications,
+backend applications. When you deploy model
+in Azure ML service, models are actually
+deployed as a web service. You're going to register the model that you
+want to deploy, you're going to prepare the
+necessary scripts to deploy, you're going to
+deploy the model to the compute target you chose, we'll cover those
+here in a minute, we're going to test
+a deployed model, should have prepared a ploy, you're going to create
+an entry script to a search requests and score them, you're going to make
+sure you provide the deployment environment with all the dependencies that
+you need via config file. Possible deployment resources
+include: a notebook VM, for Production is Azure
+Kubernetes Interface, for test environments, Azure Container Services, for local testing you can
+deploy it as local web service. To distributed scoring
+you can deploy it to Azure Machine Learning
+Compute or you can deploy it to IoT Edge devices
+and Data box devices. The final step is customer
+acceptance where you finalize all the project deliverables and hand over the final
+product to the customer. In order to implement data
+science at your organization, 2DSP actually asked
+suggested roles. The group manager
+being the one that manages the data science
+unit in enterprise. The team lead that manages a team in the data science unit. The project lead that manages the daily activities of
+individual data scientists. I've got a set of videos that explains the tasks for all of the recommended positions and a team data science unit
+in your organization. The types of work
+items you might see an agile development
+include: features, and user stories,
+and tasks and bugs. As we introduce the tasks
+for the project lead, actually change the agile
+developmental approach to a data science lifecycle, where features become projects, user-stories become our
+different 2DSP tasks, then we have subtasks and
+tasks associated with those. Azure DevOps and the repositories
+they implement within Azure DevOps provide to you
+private GitHub repositories. Azure Repos that implement GitHub repositories can be implemented as part of your
+agile process in 2DSP. When you're assigned
+a task in DevOps, you're going to create a branch. We're going to save the work, and then when a certain
+amount of work is done, you're going to
+commit and push that from a local branch of the
+upstream working branch. Then finally you're
+going to do a pull request and in the main branch, add any necessary reviews, and do a merge into the main branch before you do a built. So just to review the steps for the Azure
+Machine Learning Service, these are machine
+learning service further encapsulates the data
+science lifecycle into the following steps: we're going to develop
+the model locally, we're going to train
+the model, we're going to package it and
+register the model, we're going to
+validate the model, we're going to deploy the model, and we're going to monitor
+and retrain as necessary.

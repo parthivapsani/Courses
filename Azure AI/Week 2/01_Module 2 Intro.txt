@@ -1,0 +1,8 @@
+Welcome to Module 2: AI resources and
+management approaches. In this module, we're
+going to cover AI tools, we're going to cover
+why there needs to be a standardized approach
+to data science problems. We're just going talk about, knowledge discovery
+for databases, the cross industry standard
+process for data mining, and the Microsoft team
+data science process, as popular approaches to tackling data analytics problems.

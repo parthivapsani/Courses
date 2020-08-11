@@ -1,0 +1,67 @@
+The next step to deploy an Azure Machine Learning
+model is a web service. Includes configuring
+the ACI web service. So is your container instances, and we're going to instantiate
+an object of aci_config. Lets go ahead and look at the references for
+our AciWebservice. So from Azure core web
+service we're going to import the AciWebservice
+and Webservice. So let's go ahead and look at the references of
+this AciWebservice. This is the class for Azure Container
+Instances Webservices, this is Webservices constructor. Is used to retrieve a
+cloud representations at the Webservice object, and it'll return an
+instance of a child class. So we have to give
+it the workspace. The name of the
+Webservice object to retrieve any instance of the child webservice
+correspondent of a specific type. Let's go and see
+the other actions that are available off of
+this web service as well. Just go and do the
+AciWebservice dot. As soon as we get to an add
+properties window and add tags we're going to do deploy but right now what
+we're going to do is specify a deployment
+configuration, because we wanted to give it
+all of the values that was specified in our entry
+scripts and our dependencies. So let's go ahead and specify
+deploy configuration. If you look at the references associated with their
+deploy configuration. When we specify a
+deploy configuration this is how we're
+going to specify the resources we want for our Azure Container instances
+and the thing you passed it include the cpu cores and
+the memory and gigabytes and the default is one CPU
+and a gigabyte of memory. Just go ahead and pass this in, so we're defining here is your aci_config with a
+deploy configuration of one cpu and a gigabyte of
+memory and let's run this. If we look at our aci_config [inaudible] returns in ACI service deployment
+configuration object. Since we're using Azure
+Container instances in this particular
+example we need to specify what we
+want to provide to the container image so what special things do we went
+through that container to have. Should have defined an
+image config object from a container
+image constructor. Let's go ahead and
+look at the references for our container image. Container image constructor
+currently only for darker images the dependence is needed to run the model
+and could the runtime, the Python environment
+definitions specified a Conda file that's the
+Yamaha built earlier. The ability to enable GPU support and some customer Docker
+file for specific commands. So once again let's
+go ahead and see what methods are available under this particular
+constructor. So we have an add_properties, we have an add_tags, we have create, we have a delete, we have the deserialize, we have an image_configuration, we've got several remove
+tags, we've got run. So what we're going to do
+right now is we're going to configure this
+image configuration. Let's go ahead and
+take another look at that in little more
+detail as well. So they come up and we implement
+our image configuration. This is where we're going
+to give it the details of the specific dependencies we need for our Container Image. Access parameters to find how your model should run within the webservice and
+specific environment dependencies it needs
+to be able to run. So we need to give it
+an execution script, we need to give it a runtime and we need to give a better
+[inaudible] dependencies. So as you can see here, here's our execution script is the score.py that we build that has an in it and has
+a run configuration. We're special and I are
+runtime as Python but it's the two possible runtimes that we have as spark.py,
+spark-py and Python. In the conda file
+is this myl file were built based on
+the dependencies that we implemented earlier and I showed you what that
+actually looks like as well. So here's our conda file equals myenv.myl and let's go ahead and run this and look at what
+object class comes back. So we've implemented
+an Image config, we've given an square.py, we've given our runtime, we've given myenv.myl
+and it came back as a azureml core image container ContainerImageConfig and
+we're almost ready to deploy.

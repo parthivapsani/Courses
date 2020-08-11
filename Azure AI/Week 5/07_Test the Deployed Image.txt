@@ -1,0 +1,107 @@
+Let's test our deployed service. And remember in order to,
+Send data to our deployed service, we need to send data to our deployed service, we
+need to send it in a JSON type of format. So let's go ahead and import JSON. We can make our deserialize our model and make it available locally
+to test things out. So let's install import pickle. Our model actually needs NumPy and Pandas
+to run, so lets import NumPy and Pandas. To deserialize our library, one of the ways that we can do it is
+through the joblib constructor of sklearn. So we're going to import
+sklearn.externals joblib and from azureml.core.model its import model. Soon as I've got a sample
+variable that I'm implementing as a json.dumps object,
+it's going to create me a JSON object. So let's instantiate the sample and
+let's also print a type of sample as well. Just make sure that we're
+implementing a JSON object. Just go ahead and run this. And just look at this,
+look what a json.dumps command does. So notice that the json.dumps
+serializes the objects that you call to a JSON formatted string. And what we're going to do is we're
+going to pass it a Python dictionary. So this is the Python
+dictionary [INAUDIBLE]. So the key is data and
+the value is a list, and that in this case contains
+7.534 because remember our number of rooms in our
+initial model was a float. To look for the sample,
+I would print type of sample. It does come back as a serialized string. So let's go ahead and read that data. So give me back the value of the key
+that's named data in my JSON object. So in order to do that,
+we're going to do a json.loads. And remember that's what my run function does in my scored-up py that
+we implemented earlier. So we load our our data,
+and we reference the value of the JSON object that
+has the data as the key. And that's how we get our data from
+the JSON object that we send to our model. That's deployed out there in the cloud. So just go ahead and
+do a print(json.loads(sample)['data']) and ensure that we get 7.534 back. All we wanted but is the value back? As you can see that we've got a 7.534 so this json.loads statement,
+if we do read the, Documentation about json.loads, Deserialize a string containing
+a JSON document to a Python object. So json.loads actually deserializes
+the serialized JSON object for us. And that's what I particularly
+wanted to show you in this example. It's going to a json.loads sample data. And this is going to give
+us back just the value. As you can see, because of setback 7.534, now we can get the whole object
+back if we just take out the data. You see it gives us back the whole
+value if we just do a loads sample. Let's go ahead and put the data index
+reference back in there though, because that's definitely what
+we want to pass across, 7.534. So let's go implement
+that into an np_array. So my_array = np.array of
+that json.loads reference. There's it comes back. Right, and I will be at,
+there's it comes back as 7.534 too so it returns an array when we print it out. But if we do the type of my_array, you can see that we've got
+a class of a numpy.ndarray. But remember we have to reshape
+the particular numpy array into a two-dimensional array of a certain
+number of rows in a certain number of columns. So do a print of my_array.shape. By this way, this doesn't need the parentheticals
+because array is actually an object. So do a my_array.shape,
+knows it comes back as 1. So right now, let's say right now
+it's a one-dimensional array and what we want is a two-dimensional array. So what we need to do is go ahead and
+create a 2D array. It's going to do take my_array
+into a reshape of -1 and 1. I'm going to go ahead and
+do a print of my2d_array. There's a comes back with
+a double bracket 7.534 so now this is the first row with 7.534
+as the first element of that first row. And that's particularly what we want and if we again do a print of
+my2d_array.shape like we did before. And there's that it [INAUDIBLE]
+one row and one column. And that's particularly how
+we need to pass it to our run function that's in r squared out py and that's what's this made up
+at our ever deployed model. So let's go ahead and
+Implement that locally. So here's a local copy of my run function. That's up there on the cloud. So we're going to pass it data. We're going to do an
+np.array(json.loads(data)['data']) that I just implemented locally up here. And our result is going to be
+a model.predict(data.reshape of -1 and 1. So you can see that
+we're passing our model, this 2D array that we needed to be. So let's go ahead and Implement our
+model and make sure that our model, we're going to pull our model from
+the cloud and then deserialize it locally. So let's go ahead and do a model path, Of the third version of our model. Just verify our model path again, which is
+azureml-models/sklearn_bh_lr/3/bh_lr.pkl. [INAUDIBLE] Are we going
+to deserialize that model? The way we serialized it
+over in our other chain.py is actually our joblib.load or
+a joblib.dump. Now we're going to do
+a joblib.load to deserialize that. Number over here to go to ml-sdk and we go to our a bh_sklearn_lr.py. Scroll down here to the bottom and
+so we get a joblib.dump. And then we take took price per room,
+the local variable and saved it into outputs/bh_lr.pkl. So here's the joblib.dump and
+I'm taking that joblib.dump and I'm doing a joblib.load from it. And that deserializes the other
+data that we implemented in pickle. Let's go ahead and
+see that we can run our model locally. I'm going to
+print(model.predict(my2d_array)), which is what is expecting. I noticed that it does come back,
+As 33.801, right, so
+remember that's a hundreds of thousands of dollars associated with
+a seven-bedroom home. So just to make sure that our run
+definition and to understand our run function a little bit better,
+let's go ahead and define that locally. And remember we're going to pass it a JSON object with a Python
+list of a real number. Let's go ahead and call this local
+run function that just implemented this little [INAUDIBLE] so
+we're going to do a print run sample. So we're taking our sample and our sample up here in
+the function is going to be data. So wherever we see data, We're going to, We're going to replace it
+with the sample up above. So do a print run sample. There's that again, it comes back
+as a two-dimensional array and it looks like it gives
+a [INAUDIBLE] characters. I've done the initial one we implemented. Let's go ahead and
+run this from our Cloud. Remember the way and the object that we
+use to implement our Cloud ACI service or Container Instances service
+was the service object. And we're going to do a service.run. So let's go ahead and
+list our deployed services. So we can define it here again soon as
+you've got a ACI web service with lqai 1, our subscription number,
+our resource_group. Our name is housing-predictor. Right, so in order to load this
+web service into new object, one that we've already created that is,
+let's go ahead and call that. So we're going to do a service.Webservice. Service equals, Web service, let's go ahead and
+look at the documentation of that. And what we need is the workspace in
+the name of the deployed service. So that's what it's
+particularly looking for. And it's the name of our deployed
+service is housing-predictor, housing dash predictor. So let's go ahead and
+reference that Webservice, WS. Right, and then a housing-predictor. So we've got a Webserviceservice. That's not a good thing. Yeah, let's go ahead and
+reference our service. And you can see that we've implemented our
+service object as a housing-predictor. And back down over here, finally,
+we can do a result = service.run. So we can see we have add_properties. We've got cname. We've got create. We've got delete. We've got deploy. We've got deserialize. Let's go ahead and do a service.run. And we're going to pass it
+that particular sample. And we're running back of course
+is the same result that we got from a local model,
+result = service.run(sample). Let's go ahead and run this. Let's go ahead and
+print our result as well. So here's my local call outside
+of the function, the print my2, The print model_path, actually, the print
+model.predict so this is my local. So here's our return from our local model. Here's our returns route from their local
+model through the local run function. And here's our return
+from the ACI deployment. It was successfully tested out,
+our Azure Container Instances deployment.

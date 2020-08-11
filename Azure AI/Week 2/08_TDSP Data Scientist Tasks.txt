@@ -1,0 +1,162 @@
+In this video, we're
+going to explain the individual contributor tasks in a team data science project. If you recall, up till now, we've been using a Jupyter
+Notebook provided service. When a Data Scientist
+starts doing his work and he has assigned
+a team data science task, it behooves them to have a more substantial
+development environment. One that he has a little
+bit of control over. We're going to
+specifically talk about a Data Science
+Virtual Machine here in a few minutes that
+will help them do that. Once we have a development
+environment setup, we're going to clone the
+project repositories and utilities and mount any
+necessary storage assets from the project and team. As you can see, that's a
+part of operationalizing the data science life-cycle with Azure Machine Learning as
+developed in the model, and usually we do that locally. Let's talk about the Data Science Virtual
+Machine in a lot more detail. The Date Science
+Virtual Machine is especially built image
+for doing data science. It comes with tools
+pre-installed to configured, and you can implement
+it with GPUs if you need support for
+Deep Learning as well. Some of the tools that are
+included include Microsoft R, Microsoft ML Server,
+Microsoft Office ProPlus, Anaconda Python 2.7 and 3.5, Postgre and SQL Server 2017, Jupyter Notebook Server, and
+Visual Studio Code as well. What we're going to do
+now is actually deploy a CentOS Data Science
+Virtual Machine in Azure. Here I am in my Azure portal. We can either come down
+here to create a resource or we can do a search for
+Data Science Virtual Machine. You can see that we've
+got a Data Science Virtual Machine for Ubuntu, a Data Science Virtual
+Machine for Linux, and a Data Science Virtual
+Machine for Windows 2016. What I would like to
+do at this point is click on the Data Science
+Virtual Machine for Linux. Just a bit of a
+description that you can see right here when we start
+creating this resource, it's a CentOS
+7.4-based machine that contains popular tools
+for data science and development of activities
+as we've shown you before. It includes Microsoft R Open, Anaconda Python, Azure
+command-line tools, xgboost. Contains all drivers for
+GPUs if you need them. Includes Microsoft ML server 9.2.1 with additional support for operationalizing R models, Python Machine
+Learning Modules and pre-trained models and
+many more features. So here are some things that are included in the CentOS DSVM, Anaconda Python 5, Jupyter
+Support for JupyterHub, Deep learning with
+TensorFlow and Keras. Spark local 2.2.0, a single node Hadoop
+cluster with HDFS and Yarn, the Azure command line
+interface and Storage Explorer, Docker and NVIDIA,
+xgboost as you can see here, Visual Studio code. Let's click on Create.
+We're going to name it rjs centos dsvm, and let's specify a region
+that's pretty close to me. I don't need any
+infrastructure redundancy. The image that we're
+going to use is the Data Science Virtual
+Machine for Linux. The recommended size is two vcpus and seven
+gigabytes of memory. Let's go ahead and change this. I would like to spend up to 16. So let's go ahead and do a
+B4ms, and click on Select. You can choose your authentication
+type and we can either specify an SSH public
+key or a password. So as you can see, I've entered the username and password, and let's click on
+Review and Create. So here's my product details getting into Data
+Science Virtual Machine for Linux, specifically CentOS. I'm using the standard B4ms, and you can see that this is going to
+cost me $ 0.20 an hour. I am using my free trial. The virtual machine name that I specified as rjs centos dsvm. Here's the region and the
+availability options. The authentication
+type is password and the username is lqaidemo. My OS disk type is Premium SSD. We're going to use manage disks, and the number of
+data disks is one. Here's the network
+infrastructure, it's setting up for me, and
+boot diagnostics is on. Advanced extensions is
+none and Cloud init is no. As you can see here, at this side to turn
+on auto shutdown. So it's good that
+machine is going to shutdown at seven
+o'clock every night, and let's click on
+Create to create this Data Science Virtual
+Machine on CentOS. The recommended way to
+connect visually with your CentOS Data
+Science Virtual Machine is actually by downloading X2Go. So here I am on
+X2Go download site. I'm currently
+running on a Mac OS, so let's go ahead and
+download the DMG for MacOS. Here, I've got the
+X2Go Client App. I bring Azure again, assume my public IP address. Here's my public IP
+address of my CentOs DSVM. So let's go ahead and come
+over here to X2Go Client. We're going to paste
+that into the host name. The login that we're going
+to specify is lqaidemo, and we're going to change
+our desktop type xfce. For the media tab, we can turn off sound support and if we want to share
+local folders with a particular directory on the
+DSVM, go and click on Add. Here's my new session
+that I just created. If we click on this and enter
+a password, click on Okay. Click on New Session
+and it will open in me a new X Windows session. I also got Spider. I've
+got Weka. I got Jupyter. I've got Eclipse. I've got Mac
+Craft R. I've got links to the online documentation for the Data Science VM that has walkthroughs of
+things you can do. I come down here to
+Applications and Development. Notice that I've got
+Visual Studio Code. Again here's R in R Studio. Here's Jupyter. Here's gedit. You can open up a new
+terminal and Studio enroute. Now that I've got a Data
+Science Virtual Machine, the next steps are to
+clone the team utilities repos and group utilities repos as necessary to get
+ready for my project. If we come back over here to our Data Science Virtual
+Machine graphical interface. Here we are as Root and notice that we do have Git installed. Let's go ahead and exit out as the root user and in order to use Git on a particular machine and interface it with a DevOps, you need to create an SSH key. The way we're going to do that is this SSHQ gen and if I
+wish to save the key, the default private key
+is going to be under id_rsa then we're going just to enter empty passphrase in this particular example. If we come over here
+and we do a cat of.SSH/ID_RSA.Pub and let's
+copy the area entire SSH key. Once I have the key copied, let's log into DevOps. Back in my DevOps console, let's click on Repos
+for group common. Let's click on Clone, in the top right-hand corner. Click on SSH and let's
+click on Manage SSH keys. Let's add a new key and
+click on Add New Key. Going back over here,
+to short DevOps, copy the git URL. Now, let's get it
+back over here to our x2goClient and break
+up your terminal again. Let's go ahead and
+make a directory under occur mkdir lqgit, cd lqgit and git clone. Copy that git reference and
+here's the key fingerprint. Yes, that's the one
+I'm going to use. I'm going to do another [inaudible] successfully
+copied group utilities. We also need to clone the
+project repository and clone the team utilities
+repositories then come back over here to
+group utilities repos [inaudible] LQ DevOps team. I got repos here, I got clone, got SSH, copy our team utilities
+center git for the team utilities and do the same thing for your project
+utilities as well. Here's our Data Science
+Project Master. Don't do an ls or lq git because we've
+got git utilities with that lq data science projects one and we've got a
+lqt team utilities. To say I always assign a
+new task here at DevOps. Here's the TDSB task
+write a Python Scripts. Go ahead and open this one
+up and I noticed that it certainly had assigned when I click on the
+dropdown arrow here. Let's do a search. Let's go ahead and assign it to myself
+and save and close. So in DevOps, let's go over here and click on the
+ldqdatascienceproject. Now, let's click on
+boards and then you can see that I've assigned myself a task to write
+a Python Script. Let's go ahead and open this up and if we click on the
+three ellipses over here, let's create a new
+branch to this work in. My branch name is
+going to be pyscript and this is going to be based on my LQ data science projects one master and we're link in those to the Write
+Python Script task. Now, let's go ahead
+and create a branch. Here you can see here's
+my Python scripts branch. It's now off of master. If I wanted to do the same thing on my Data Science we have, I can do a git checkout dash
+b and write the name of the new branch that I want to create and then go in
+and you will get status. You can see that we're
+on the branch script. To switch between
+the master branch and the work in branch. We can do a git checkout at master and we're going
+to do a git status. Let's run git checkout
+script again. So say I add some
+code assets in here. So let's just go ahead and
+touch a script dot ui. To work on the branch, in the Commit Changes, we're going to do a git status. Notice that we've added script
+dot py that we know that. We're go ahead and
+do a git add of dot. We're going do a commit and specify what
+it is that we did. Here, my git commit command where I changed my Python script. Now let's do a git
+push which you can see that we sent it back up to azure repos and if we come back
+over here there's our repos. We do a refresh. Notice that we just added a script
+dot py just now. If I click on this you can
+see the changes that I made. This is my awesome Python script. I've done several of these, we're going to go
+to click on repos. We're going to click
+on pull requests and you can see it's
+going to tell us that we upgraded the script
+two minutes ago. Let's create a pull request. Here's the title of it. We want to pull it
+from script into master and the title of
+changed my Python script. You could put reviewers
+in here if you want to. Of your title work item. Here's my work item for writing a Python script and
+let's click "Create". So here's my a successfully
+created pull requests and this way approve
+it and complete it. Let's click on "Complete".
+So the merge comment is that I changed
+my Python script and there's complete merge. You can see as now completed look over here and
+click on "Master". Come over here and
+click on "code". We'll click on my "script dot py" and then notice that
+it does have our changes.

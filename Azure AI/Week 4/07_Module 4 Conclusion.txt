@@ -1,0 +1,12 @@
+In summary, in Module 4, we discussed the Azure
+Machine Learning service, and how you interact with it. We taught you how
+to create and use the Azure Machine
+Learning service with az command line tool, and the portal, as well
+as programmatically. We showed you how to
+train your own model using the Azure Machine
+Learning Service. We covered how to define available computer resources
+for model training. We also showed you how to
+separate an experiment, execute a run and access a model of the Azure Machine Learning Service
+when you're done. The next chapter is going
+to show you how to take that registered model and deploy it as web
+servers in the cloud.

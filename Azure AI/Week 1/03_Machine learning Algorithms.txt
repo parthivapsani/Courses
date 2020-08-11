@@ -1,0 +1,73 @@
+Some examples of machine
+learning algorithms, they can solve supervised
+classification, supervised regression, and
+unsupervised clustering include linear regression, logistic regression for
+classification problems, decision trees, support
+vector machines and neural nets or deep learning. Let's go ahead and explore
+some more of these. Linear regression is a classical
+statistical technique, used for when you
+want your answer to be a continuous number. Linear regression fits
+a straight line for the independent and
+dependent variables. Where we are when
+we try to determine accuracy from linear regression, or loss metric is going to
+be sum of squares or root mean sum of squares between the observed targets and
+the predicted targets. Then we have logistic regression. Logistic regression is a linear solution for
+classification problems. Your dependent variable is
+a class label this time and the outcome has to predict a class label on unknown input. The loss metric during
+training and have a logistic regression model is cross-entropy but it often uses a confusion matrix to determine accuracy or other
+important metrics because it's easier to explain. Decision trees are hierarchical and there are common solution for supervised machine
+learning problems, both classification
+and regression. What decision tree does, is it attempts to identify the most important factors
+at the base of the tree, and then adds less important
+factors up the branches, until it reaches the
+leaf identifying the category or continuous
+value that will be predicted. The problem a decision tree is figuring out the most
+important questions. Decision trees have an issue
+when they're too simple, and one of the
+solutions to that is the amalgamation of multiple
+trees in an ensemble method. An example of this would
+be a random forest or boosted decision trees. What happens with
+boosted decision trees is that each model, each tree gets a subset of the data and comes up with
+a solution by itself. This limits the possibility of over-fitting on
+the training data. We've got support
+vector machines. Support vector machines don't
+need very much data because they identify support
+vectors or points to the data set
+that are closest to a hyperplane separating
+labeled data as widely as possible. Support vector machines are quite often called the widest
+street approach. They're implemented for
+both classification and regression problems. For prediction,
+classes or regression are determined by which side of the hyperplane the
+point falls on. Another very interesting
+implementation of a machine learning algorithm is neural nets and
+specifically deep-learning. Is loosely based on how
+neurons in the brain interact. A deep neural net consists of an input layer including
+observations and labels, an output layer consisting of a learned inference and a set of hidden layers that accepts the
+output of previous layers. The reason that deep
+learning is called deep, is there's a lot
+of hidden layers, a lot of neurons in
+those hidden layers. So the activation function that's builts in to each neuron, in each hidden layer
+is what actually encapsulates
+information and helps us learn more about our inputs. Finally, we've got
+clustering algorithms. Remember a clustering is an unsupervised
+machine learning task. Two possibilities for
+clustering include; K-means and K-nearest neighbor, K is a variable
+that we're going to specify either by
+how many clusters or how many neighbors
+we're going to look at. K-means is based on a
+distance calculation which points in the
+cluster centers. Nearest neighbor
+specifies the number of neighbors through the
+K variable as well. Common languages that we have for developing data science
+solutions include; Python. The benefits of Python
+for data science include the fact that it's easy
+to use, to interpret, it's high-level extensible, and there are many available scientific libraries
+associated with it. A very common tool for data science modeling
+is R. It's open-source, it's harder to learn but
+there is a vast amount of statistical libraries but it's not very general purpose. So it's a little harder on
+the up-taking R. We have SQL, that provides logic
+to interact with and manipulate structured
+data in databases. Another popular statistical
+package is SAS. SAS is not open source, but it's very stable and secure and a lot of people
+still depend on it. The demos and examples in this class are
+implemented in Python.

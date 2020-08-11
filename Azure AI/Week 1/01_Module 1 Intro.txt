@@ -1,0 +1,12 @@
+Hello everyone. My name
+is Ronald J Daskevich. Not only I'm going to
+be introducing to you our definitions
+have of AI chapter. Once you complete this chapter, you'll be able to define
+AI and Machine Learning. We'll be able to
+explain some common Machine Learning
+tasks and algorithms. You'll be able to
+describe some languages used in Data Science. We're going to use some
+basic Python commands, and then describe the
+Python scientific ecosystem that's built on top of it. We're going to explore
+some open-source resources for solving Machine
+Learning problems.
