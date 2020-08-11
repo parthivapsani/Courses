@@ -1,0 +1,106 @@
+In this video, we're going to explain the
+capabilities of the computer vision API. The computer vision API includes
+capabilities such as face, content moderator,
+video indexer, custom vision, ink recognizer and
+form recognizer that are both in preview. Some of the specific
+capabilities of what computer vision can provide you include
+content tags, object detection, brand detection, image categorization,
+image description. Face detection, image type detection,
+domain-specific content, color scheme detection,
+smart-cropped thumbnails, printed and handwritten text recognition,
+and adult content detection. Here are the steps that are introduced
+in the rest of this video. I'm going to try out the computer
+vision cognitive API. We're going to create a computer
+vision API Cognitive Services API from the Azure portal. We're going to reference the API keys
+in the quickstart page of the API and we're going to call
+the API programmatically. So let's go ahead and get started. If we come over here to
+azure.microsoft.com. Let me go over to
+the Computer Vision link. But let's just try it out. So here's some pre-canned
+images that are available. Here's what the image
+actually looks like and here's what their return
+of the API looks like. You can see that it identifies objects. It identifies tasks along
+with their confidence to include sky with a 99% confidence. Water with a 99% confidence
+outdoor with a 99% confidence. It includes a description with
+those tags that include text. And the text here is a large body
+of water with a confidence of 92%. And you can see here, there's all sorts of metadata associated
+with this particular images well. The image format, the image dimensions,
+the clip art type, the line drawing type. Black and white true or false, adult
+content true or false, racy true or false. Here's the categories that it comes up
+with, outdoor, outdoor ocean beach, sky, cloud. There are no faces. The dominant color background in
+this image of course is blue, and we can see some of the accent colors here. We can go ahead and
+click on another picture here. Here's a skyline of New York City for
+example. Here's the tags and
+the objects that it sees. It sees buildings, and
+it gives us the place in the particular picture where
+it finds those buildings. Here's the tags. Here's the description, a black-and-white
+photo of a city with 95% confidence. Our image format is JPEG. The image dimensions in
+this case are 462x600. It's black and white. There's no adult content and
+it's not racy, and we can see the categories here as well. The categories are hierarchical in nature,
+so building, building street, and outdoor city. This is what the dominant colors are. So the next step is to create a computer
+vision API Cognitive Services API from the Azure portal. And then reference the API keys of the
+created service on the quickstart page. Let's go ahead and do that now. In Azure,
+let's click on Create a Resource. Let's click on AI Machine Learning. And let's click on Computer Vision. We're going to use our free trial. We're going to specify a location. And we're going to specify an existing
+resource group, and click on Create. Here's my computer vision
+API that I've created. Here's your key and
+an endpoint that's available. And notice we can make an API call. Or we can code to get
+access to this API as well. So let's first make an API call. Let's open up by term. And make sure that we have Curl installed. So our first step to run this
+in Curl is to copy our key. And let's come back over here to iTerm and
+paste that key in here. Our content type is going to
+be application/json, and then we're going to copy our endpoint. And notice we're going to call
+Vision version 2.1 of the API. And we're going to call
+the analyze method and visual features that we're
+going to analyze, categories. Description. And if there's any landmarks,
+defined will see landmarks and we'll go ahead and
+define our language as English. Yeah, notice I've got this beautiful
+picture of the sign in Paris. Let's go ahead and
+click on this remote URL, and let's specify as
+part of my call via URL. You can see here's my response back. Got buildings. No landmarks. We got outdoor. Got water, bridge, train, river,
+boat, building, traveling, city, going, large, track, crossing, long,
+harbor, filled, riding, clock. A train crossing a bridge over a river
+in a city, and the confidence is at 68%. So once more, just to highlight
+the different parts of our API call. We included this subscription key. We included the call to our vision API. We have to specify the version and
+the method that we want to do, in that case analyze. Visual features, we asked to analyze or
+categories description with details, landmarks and language singles English. We uploaded a picture
+of the sign in Paris. >> In the previous example, we showed
+you how to make a Curl command and an API call via the command line. Let's go ahead and
+do it through Python now. If I bring up my Jupyter notebook in
+Azure, notice that I've imported requests. I've imported matplotlib as plt. I've imported json from pil. I've imported image and
+from IO I've imported bytesIO. One of the things you have to do in
+order to use the API within Python is save this subscription key and
+the endpoints as variables. So as you can see, I've got my CV
+subkey and I've copied the subscription key in here and my CV endpoint for
+my squid starts page and a jeweler. So recall the vision URI is the endpoint /vision/v2.1/analyze. As you can see we need to build
+the rest of the URI in here. So we're going to take our my_cv_end_point
+and include vision 2.1 and analyze. And just to show you that it was
+a staged correctly, notice we've got lq-computer-vision-api.cognitiveservices.-
+azure.com/vision/v2.1 and analyze. So notice I've got
+a couple of pictures here. Let's go ahead and implement this one. It actually recognizes
+a landmark which is cool. So, notice that we've got to be
+able to send a request to the API. In order order to do that, we're
+going to do a request stop post function off of this requests library
+that I alluded earlier. So we're going to specify the headers. The headers is where we
+specify the subscription key. In this case, our parameters that we're
+going to call are visual features including categories,
+description and objects. The data that we're going to send to
+our post includes the the image URL that we're going to use. And then we're going to do a request up
+post that returns a request to models response. And we're going to send
+the my_analyze_url. We're going to set the subscription
+key as part of the headers. We're going to specify
+what returns we want back. And we're going to specify the json
+data that we want to send to it as the image URL. And this returns a models response. Let's go ahead and run this, and
+you can see I printed the type. The response is, it's a models response. And when I actually call
+the response function, notice that we've the URI tag back. So we got a response of 200. Let's go ahead and save our
+responses into an object variable. That's the reason for
+this analysis object. You're going to sign
+analysis to response.json. And now,
+we're going to print the type of analysis. Which is going to be
+a dictionary this returned and we're going to print
+the analysis itself as well. The categories that came back and their confidence include the name
+with a confidence of 0.3. Outdoor with a score of 0.007. Landmarks, notice that it knows this is the the Tour Montparnasse
+with a confidence of 93%. The tags include outdoor, building, city,
+view, water, filled, large, mountain, ocean, many, track, beach. And you can see the specified caption, is a view Tour Montparnasse. If we want to display the image and
+encapsulate the caption, we can go ahead and specify an image. Send the image URL. Is it byteIO? Plot that in matplotlib, and insert the caption as a title. I'm going to do a plt.show. Let's go ahead and run. You can see that the response that comes
+back is a view of Tour Montparnasse. To keep on going with the Paris theme,
+we can pick another picture if we want to. Let's go ahead and
+use this picture instead. As you can see the text on this one is
+a large body of water with a city in the background. And it did okay. It thought this was a body of water.

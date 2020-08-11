@@ -1,0 +1,66 @@
+So the main libraries
+we're going to be using this week include NumPy, Pandas, Matplotlib, and Seaborn. Let's look at these in
+a little more detail. The details for NumPy can be found at this
+particular website. NumPy is Python's primary
+scientific package. The main data abstract
+that you have in NumPy is in n-dimensional array, it's actually an ndarray class. The ndarray can be indexed
+across all dimensions. Elements are the same type, dimension start at zero just like everything
+else in Python, and you can call it
+by using np.array. So array is the ndarray builder, the ndarray constructor,
+but the classes actually implemented
+is an ndarray. NumPy is the building block for other scientific libraries in machine learning libraries
+we're going to use later on. Pandas. Available at
+Pandas.pydata.org is built on top of NumPy. It includes a data abstract where you have indexed rows and
+named columns like in Microsoft Excel spreadsheet
+or Data Frame in R. Pandas references
+this as as Data Frame. There's also a one-dimensional
+abstract called a series. We've got indexed rows
+and named columns. One of the nice things
+about Pandas is there's lots of input and output options to work with data
+from all different formats. If you want to plot the
+output of your logic, Matplotlib offers you
+object-oriented and functional approaches
+to graphing. Has all different kinds of plots. You can do scatter plots, you can histograms, you
+can do line plots. Anybody have all ways that
+you can control the way that your graph is actually visualized including the
+thickness and aligns, the marker shapes, the colors, the size, the labels. Built on top of
+Matplotlib is seaborn. It's a data-oriented API. It provides all
+aggregate statistics for categorical variables, and seaborn is actually very
+good for data exploration. It builds on top of the base
+structure of Matplotlib. Built on top of
+NumPy and Pandas and Matplotlib are a lot of common Python libraries
+for ML solutions. Let's go ahead and discuss each one of these in a
+little more detail. So we've got scikit-learn, it's popular Python library
+for machine learning. It's built on top of NumPy,
+SciPy, and Matplotlib. It's a open-source. It implements all different algorithms
+for classification, and regression, and clustering, and offers model evaluation
+for all of them as well. I ask you now to please review the demos for linear
+regression and logistic regression that I have saved under this
+particular course lesson. In addition to scikit-learn, we've got a PyTorch, which is another Scientific Python
+computing Package. The nice thing about
+PyTorch is that, it's a replacement for
+NumPy that supports GPUs. PyTorch implements deep learning and it supports
+distributed training. Then we have TensorFlow developed at Google,
+and then open sourced. It includes a large library of implementing machine learning algorithms including
+neural networks. It has a very nice
+high-level tf.estimator API. The way you present your data to TensorFlow is via a Tensor. We've got Spark MLlib. This is the Spark Ecosystem's scalable machine learning library built on top as
+SparkSession in Spark 2. It's interoperable with NumPy, and it implements
+distributed implementation of many popular machine
+learning algorithms. Finally, in conjunction
+with TensorFlow, we've also got Keras which is a new TensorFlow Neural Net API implemented under tf.keras, and it's easier to use than
+traditional TensorFlow. What you do is, you
+assemble layers to build models to higher level
+abstract for neural net. So the Python
+development environments that we have available to us in this course include
+Visual Studio. Visual Studio Code is a popular code editor that comes with debugging
+capabilities for your code. There is tab completion
+built into it, so you'll get more familiar with your modules and functions, and the arguments that they need. If you're building
+your own version of Visual Studio Code, you'll need to install
+the Python extension. Printing the data
+science virtual machine and we're going to
+implement it later, you'll see those actually
+available to you. Then in Python
+development environment, we have as Jupyter Notebooks. It's a web-based collaborative
+development environment. Is used to program, interpret, visualize, and document
+your programs. Jupyter Notebook is
+a convenient way to clean and transform your data.

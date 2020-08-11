@@ -1,0 +1,105 @@
+Hello. This is Ron Daskovich. In this video, we're
+going to show you how to implement a linear regression
+algorithm and scikit-learn. But the first thing
+we need to do in any machine learning problem
+is prepared the environment. Here I am at Azure
+Notebooks as you can see, and I've opened up
+a new notebook. This notebook is called boston housing in
+linear regression. The first thing we need to do
+is prepare the environment. As you can see here, we're
+going to import NumPy as np. We're going to
+import Pandas as pd. I'm not sure we're
+going to actually use it in this
+particular example, but it's not a bad thing to have. We're going to import MatplotLib, pyplot as PLT, and we're going
+to import sklearn as well. The second step in a machine learning lifecycle
+is to load the data. So from sklearn.datasets, we're going to
+import load_boston. Just go ahead and run
+this particular cell. Or from sklearn.datasets programming import
+to load_boston, sklearn has several
+different datasets that are available for this exact purpose, for playing around with different linear
+regression algorithms, and algorithms as
+a total as well. Notice that we're
+going to implement a boston_dataset variable, and we're going to run
+the load boston function from sklearn. Let's go ahead and
+look at the type of this boston_dataset. Go ahead and Shift Enter, we'll go ahead and run this cell and move to the next one. So you can see this
+is a sklearn bunch, and the sklearn bunch works very similar to a
+dictionary in Python. We can print the keys, we can look at the
+feature names and we can look at a description of how the actual dataset looks. Let's explore our data
+for a little bit. Notice that our dictionary
+keys include data, target, feature names,
+description, and filename, those are the different keys that are available in our bunch. That is here I've done a
+boston_dataset feature names, then we did a boston_dataset
+description as well, and you can see that here
+are different attributes. Our attribute information
+includes per capita crime, proportion of
+residential land zone for lots over 25,000 square feet, proportion of non retail
+business acres per town. Nitric oxides, the average
+number of rooms for dressing, proportion of
+owner-occupied units built prior to the 1940, index of accessibility
+to radial highways, and you can see what some
+of the others are here. Our dependent variable
+here in this case, is going to be median value
+of owner-occupied homes. That's what's going to be our
+target here in our dataset. Well, I've got a hypothesis, that the number of
+rooms that are in a house is going to affect the median price of that house. Let's go ahead and prepare
+the data and break it down into a training
+and test datasets. From sklearn model selection, we're going to import a
+train and test split. We're going to define
+number of roots train, number of rooms test, medium price train and
+medium price tests. Remember, that's going to
+be our dependent variable. It lets you implement a train
+and test split where we're going to look at the fifth
+element of our dictionary. The fifth column or a dictionary, which is our number of rooms. You can see that here's the attribute information in order. So these are our columns,
+so this is Column Number 0, 1, 2, 3, 4, 5. You can see that we're
+referencing the number of rooms for dwelling as five. Then the input to our linear regression model is actually looking for a 2D array. We're going to reshape it
+into minus one and one, and this tells me keep
+all of the rows and then organize the
+data into one column. The only column
+we're representing is the number of rooms. Then we're going to do a
+boston_dataset target, which happens to be
+our medium home value. Hundreds and thousands, we're
+going to reshape that one, take all the rows and
+implement a column as well. Let's go ahead and look at the shape of each one of these, make sure that we
+did that correctly. We're going to print
+the number, we're in train.shape, the medium price. Train.shape. I'm going to go ahead and look at our number
+of rooms.shape as well, and look at a particular
+value in there. Just go ahead and run this cell. I can see that our training set has 379 rows in one column, you can see that our
+test set has 127, notice that in my
+train and test split, I didn't specify a split and it automatically
+splits it 75-25. Let's go ahead and implement our linear regression model now. From sklearn.linearmodel, we're going to import
+linear regression, or price per room, is the variable,
+we're going to set to our linear regression model. Let's go ahead and do it
+fit on our training data. The first argument that goes to our fit is
+actually the number of rooms and the second argument that goes to our fit
+is our medium price. We're looking at medium price as a function of the
+number of rooms. Let's implement our
+linear regression model and then fit our linear
+regression model training. Then next step, of course, is to predict on a linear
+regression model. We're going to do a
+price room.predict, number of rooms tests zero, and of course, maps that, we'll show the output later. We actually want that
+to be in results per row and we one column. So almost what we would
+do on a 2D array. Let's go ahead and look at a couple of individual results, and then let's go
+ahead and look at a setup results from a range. Then we going to go ahead
+and do the prediction on the entire test set as well. So we're going to do a med_price
+prediction, price_room, which is the model predict, and we're going to predict
+on the number of rooms test. Here's the output of zero, here's the output of five, so the fifth element, and here's the output
+of the first 10. Let's go ahead and
+graph the results. We're going to import
+MatplotLib pyplot as PLT. We're going to plot our
+training data here. We're going to turn it
+green, we're going to plot our test data and we're
+going to turn it red. I'm going to plot a
+prediction in navy blue, remember the first argument is our x-axis and the second
+argument is our y-axis. Then, we're going to go ahead and plot the
+regression line as well, which is what this
+particular statement does. So plt.plot, number rooms
+test, price room.predict, number of rooms
+test, and the color, we're going to specify
+on the line is gray. We're going to go
+ahead and specify its title for the graph, we can also provide labels
+for the x and the y-axis. To show all of this, we can
+go ahead and do plt.show. But remember, the greens
+are our training data, the reds are our test data. The blues, which are actually on this
+regression line of course, now right here on the graph, and then we've got the
+actual regression line, which is in gray. Congratulations, you've just done your first linear
+regression model.

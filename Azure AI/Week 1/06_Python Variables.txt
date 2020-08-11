@@ -1,0 +1,42 @@
+So let's go ahead and
+cover some Python basics. As you see, I've got
+a browser window up, and I've got a
+notebooks.azure.com. Notebooks.azure.com
+organizes your Python Notebooks
+according to project. So you see that I've
+got a Python basics, and you can see that we've
+got a Python variables, IPython Notebook, a reference
+that I've built here. Let's go ahead and open that up. Notice it comes up in a
+second browser window. So just a little
+bit more background behind notebooks in Azure. Say hosted service, it
+doesn't cost you anything. Your projects are limited to four gigabytes of memory
+and one gig of data, and if you need more than that, it's a good idea to stand up your own data science
+virtual machine, which we'll be covering later. Just go ahead and bring up our IPython Notebooks
+for Python variables. So here are some of the simple
+datatypes that Python has. Notice we've got integers. If I want to declare an integer, I just take a variable and I
+assign it to an integer so, in this case, x equals 10. Let me go ahead and
+print the type of x. This going to give
+us back the class and the fact that it's an integer that's been loosely typed. Let's go ahead and clear
+all my output here. So Python is an
+interpretive language. So I either have the option in the Jupyter Notebooks to click and run cell up here above or I can do a Shift
+Enter command, notice it comes back
+as the class, the int. I can then reassign variables, a two different data types. So now we're going to assign
+x to 3.14, happy Pi day. Then we're going
+to do a type of x and it's going to
+come back as a float. Though we got complex numbers with two elements
+that are provided, the first element is
+the real part and the second element is
+the imaginary part, both implemented as floats. Then we'll do a type of R and notice that it comes
+back as a complex type. We also have Boolean types, which are actually a
+subset of integer. So I can specify a
+equals true with a capital C and b equals
+false with a capital F, and we're going to print type
+of a and print type of b. Notice that both these
+comes back as Boolean. Finally, we have a string. Here's an example
+of a string with double quotes that I've
+implemented as s1, a string with single quotes
+that I've implemented as s2. Notice we can concatenate the strings together by
+using the plus sign within Python to implement an s1 plus and then a space
+and then plus s2. But if we do a print type of s1, we can see that it is
+considered a string. Those are the basic data types we have available to
+us within Python.

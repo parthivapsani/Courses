@@ -1,0 +1,105 @@
+So we just showed you how to
+train and register a model locally in the last video. So let's take our SKLearn
+Linear Regression and save it down
+as a Python file, and you can see
+that I've done that here at my Azure notebooks. We've got a bh_sklearn_lr.py, saved as Python that I
+downloaded and then upload it back to my notebooks reference, and we're going to use this one as we train the model
+in the Cloud now. So let's go ahead and show you this particular steps to do that. The one extra thing
+that I've done is made a directory and my
+current path made outputs. So as we send this to a
+distributed training cluster, is going to create this output directory
+that's going to be serialized into our ML workspace. For next steps, I'll recreate a run configuration
+and a compute target. Let me show you how to do that. Let's import one configuration and let's import AmlCompute. This is going to be
+our compute target. Under this list VMs object, we're going to see
+the supported VM sizes in our workspace. As you can see a standard
+one DS v2 with one and 3.5. DS2 v2, two and seven, d3, four and 14, standard DS4 v2, 18 and 28 and you can see the rest that are
+particularly listed here. So let's just go ahead
+and use our standard one, since this is the model that we're training
+at this point. You can see here that
+I've instantiated, our run configuration
+is compute config. We find the target for that compute config
+to be AmlCompute. Then finally, we specified
+the VM size for AmlCompute to a standard one DS1 v2 and I just copied this
+for my standard list, so I didn't have to type it in. Let's run this. You notice
+I forgot an underscore. As part of your
+run configuration, you've got to include
+your Python dependencies. So we're going to import the CondaDependencies
+constructor. Then we're going to
+load an object with out CondaDependencies and based on the successful run of my linear regression
+model last time, notice that I did a
+pd.show_versions. We're running pandas
+version 0.23.4. So notice that I've
+asked it for pandas 0.23.4 and it's
+running numpy 1.16.2. If we come over here, we're asking for numpy 1.16.2 and I'm also asking for
+scikit-learn and let's run this. You can see here, we sent this to the
+interpreter and the interpreter came
+back with no issues. So what have we done so far? We set up a run configuration. We set up the
+compute targets that we wanted that run
+configuration to use and we set up the dependencies that the virtual machines
+that are deployed in that target configuration
+are going to need. So now we're going to import experiment and we're going
+to import a ScriptRunConfig. We're going to import our bh_sklearn.py from
+our current directory. We're going to use
+our compute config that we just created up above. Then, we're going to create
+an experiment based on our workspace and we're going
+to name it lq simple model. We're going to do a
+experiment.submit which is going to be our run. The configure we're
+going to use is the configuration that we
+just specified up above. You're going to specify our
+run.wait for completion, and show_output equals true. Let's go ahead and run this. Notice I mistype the name of my training script
+bh_sklearn_lr.py. Let's try again. As soon as we've got our run ID and that's when we can view the web reference,
+downloading source code. So over here in Azure, if I click on my
+lqai_workspace_1, come down here to do experiments. I've notice that I've
+got a lq_simple_model and we can see when they're
+in process of preparing one, running zero, completed
+zero, failed zero. This got a run type
+azureml script run, the status is queued, it's created, created by me. Come over and look
+at the details. This is when it was created, it's telling the
+process of running. This is run number one, the scripts that
+we're referencing is bh_sklearn_lr.py created by me. Outputs, there are logs, but also shows us the
+logs and the status. As that container images and Docker images are
+being built to push this to our Azure machine
+learning cluster. So you can see it's
+actually running now. Here's our execution log, executing job
+environment clean-up. Staring bell Docker image, creating the proper
+directories that we need, and notice we're finalizing. It looks like our job is complete and that
+is my experiment failed because I left matplotlib
+in my Python reference. We did call it in
+the configuration. So back over here, in my boston_housing
+linear regression, I did matplotlib dot
+underscore version underscore. Notice that because back
+it's three zero zero. Let's just go ahead and load matplot.300 over
+here to dependency. So here we are at run number
+two after I fixed that. Our script name is bh_sklearn
+and as you can see here, we're waiting for a Docker build. So here in the output
+of your notebook, you can see that the experiment
+completed successfully. So it cleans up all the
+outstanding run operations. Here are some of the
+cleanup that happened. Here's an execution summary
+of our lq_simple_model. Here's the run id. The
+target was AmlCompute, the status is completed,
+the start time, the end time, the properties, the run definition, environment, dependencies,
+environment variables, log files associated with that. We come over here to
+the portal itself. Then we can click on experiments. Here's my lq_simple_model. You can see here I had some that failed over here in my notebook. I set that dependencies
+earlier but I forgot to add them as part of
+that run configurations, so make sure that you the specify their compute configure run at Python conda_dependencies
+equal dependencies. Forgot to do that
+and that's why I failed the first few times. Run number seven was successful. It took six minutes
+and 40 seconds. It was created on October
+8th, 2019 at 2:27. Let's go ahead and click on that. So we click on the outputs. Notice that our bh_lr.pkl. The finalized model is
+available right here. We have the option
+to download that. Of course, we can
+register our model with our Azure MLCLI. So we're done training
+our model in the Cloud. We can use that run object and do a get filenames and
+noticed that one of my file names including
+all the logs is the outputs bh_lr.pkl
+that I saw in the portal. We can ahead and download
+this file to your local box. Let's go run download file name equals outputs at bh_lr.pkl. If I can do a bing ls and then al and we're done with that. That is today, did
+download a new bh_lr.pkl. Then we can go ahead
+and do a model of register from there as well. So registering the model
+AML trained the model. If we come over here
+and look under models, we do have an AML trained model that I've now registered online. There's also a register
+model reference and method right off of
+the run object itself. You could do a run.register model name and model path
+and when you run that, you come over here in Azure and refresh your models
+and notice that we've got an sklearn_bh_lr model that I just created and registered straight from the run as well.

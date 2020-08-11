@@ -1,0 +1,134 @@
+Hello. This video describes the steps to create an Azure
+Machine Learning workspace. As you can see, here I am
+in my Data Science VM. Go to Applications. Let's go
+ahead and bring up Mozilla. Let's bring up Azure. I'm going to sign in. Now, let's
+go to the Portal. Let's go ahead and
+create a resource. Let's got to AI and
+Machine Learning. Up there on the top, you got a Machine Learning
+Service Workspace. I'm going to name
+it lqai_workspace. [inaudible] Free trial. My resource group is
+going to be aidemos. Our location is
+going to be East US. Let's go ahead and
+review and create. You can see workspace
+creation is in progress. You can see my deployment
+is in progress over here. Our deployment is
+underway. You can see that I've successfully
+created my workspace. Let's go ahead and
+go to the resource. Yeah, I know that
+there's all sorts of documentation available
+here on the workspace site. There's a link for getting
+started with sample notebooks. There's another, Create a new Automated Machine Learning Model. There's a visual
+interface built in Azure Machine Learning services and you can see how
+to use it here. The view the documentation
+for Azure Machine Learning, there's all sorts of
+samples that are available. There's activity log, there's an access
+control you can set up. You'll get Notebook VMs. You can look at Experiments, and Pipelines, and
+Compute, and Models. This is your Model registry. You can look at your Deployments. We got Property settings. We've got an export template. If I want to use this workspace and
+associate it with my DSVM, I actually have to download
+a configuration.JSON file. Let's go ahead and do
+that here on my DSVM. Let's go ahead and
+download the config.JSON. [inaudible] it's under Downloads. If I'm going to use
+Jupyter notebooks in my Data Science
+Virtual Machine, I actually have to
+do a config.JSON. I have to move it into
+my notebooks folder. Let's go ahead and
+bring up a terminal. Here on my Notebooks folder, let's go ahead and copy. So I've got config.JSON here. If you look at this
+config.JSON, cat config.JSON, it just has all the references
+that my subscription ID, my resource group,
+and my workspace name that we're going
+to use later on. Play around with implementing
+and working with Azure workspace within
+Azure command line. It will start open
+up a Cloud Shell. You can see here,
+let's go ahead and open this in a new window. If you noticed, I run
+an az group list. I can see that I have
+an aidemos, resource. You can see I have a
+Cloud Shell resource. You can see I've got a
+networkwatcherRG resource. We're going to of course use
+the aidemos resource when we go to create or reference, say, workspace that
+I've already created. Now, we can go ahead
+and do an az ml. You can see the options that
+are available to me here. Let's go ahead and
+add the ML extension. The way I do that is by
+doing an az extension add, that was the name
+of Azure cli-ml. If I did an az ml command. So the compute target
+I've got a service, I've got a model, I've got
+a dataset and datastore. I've got a workspace,
+last but not least. Let's go ahead and look
+at the possibilities for where is the workspace. You can see that I
+can do a delete, I could do a sync-keys,
+I can do show, I can do a share,
+I can do update, I can do a create,
+I can do a list. Let's go ahead and
+do a workspace lists since I already created one. As you can see, here's my lqai workspace and I can call in
+references as I need to. For example, let's go ahead
+and do workspace create. [inaudible] -w and we'll name this workspace_1 and
+let's do a -g lqaidemos. You can see there's
+a JSON response. It told me the
+subscription we used. It told me when we created it. We have the lqai_workspace_one. Here's the ID of it, the identityPrincipalId,
+the indentityTenantId, the KeyVault, the name
+or Iqai_workspace_1, resource group is aidemos
+as you can see it here. I told you you can do an
+az ml workspace list, see all of them, notice there's
+going to be two now here. We're going to have
+an lqai_workspace, and lqai_workspace_1 and now that I've got the
+information about it, I can do show on it. So by show of lqai_workspace, the first one that
+I created here in my dash g of my
+resource group name, and so you'll want
+to do an update. If I do an azure ml
+workspace update, and let's go ahead and change
+the description of it. It will be dash w Iqaidemos and we're going to do a
+dash d for description, "This is my handy-dandy totally awesome workspace." Notice that it doesn't have
+my default resource group, let's go ahead and
+specify dash d of aidemos and you can see that I've updated
+the description. You can see that I've run
+az ml workspace update, friendly-name, my totally awesome workspace dash d aidemos, looks like there's a
+bit of an issue here. The description and friendly
+name are actually reversed. So a friendly-name updates the description and description updates
+the friendly-name. So here Azure ML workspace, the last thing I'd like to show you how to do, it's
+actually delete. So still in workspace delete. So you can see what
+you can do a dash w. Under workspace name, just Iqia_workspace_1, and
+of course we can specify our resource group is dash g. That's how you delete
+an Azure ML workspace. Another way you can
+create and reference a Azure Machine Learning
+workspace is programmatically. So here I am in a Jupyter Azure Notebooks and you can see here from azureml.core we are going
+to import workspace. Here we're going to do a workspace.create from the workspace constructor
+and we're going to save that into
+an Iqai_ws object. Our name is going to
+be Iqai_ workspace, we're going to use the
+particular subscription ID, our resource_group is
+going to be aidemos. Since we already have
+a resource group, we're not going to specify
+to create a resource_group, so we're going to
+set this to false. We're going to specify a location where this is going to happen, and you can see that
+I've already run this. It required an interactive
+authentication to create the workspace. We successfully completed that via in another a browser window. Deployed a StorageAccount, a KeyVault, deploying
+AppInsights. You can see how long this took. I deployed StorageAccount,
+deployed a workspace with name Iqia_workspace_1 and that took 33 seconds as well. So now if I come back over here, if I go to the all resources, means that I do have an Iqia_workspace_1
+that I've created. It's available in East US and you can see I
+successfully created it. If you want to be able to
+call this workspace in other environments
+without having to put the specific subscription_id, and resource_group, and
+name of the workspace, I can create a workspace
+configuration file, but using the Iqai_ws object
+that we just created, do a right-click tick off of it. We're going to specify
+the particular path that we want to use and the
+file that we're going to use. So notice that when I run this, if I do a ls, at that current directory, notice that it doesn't
+actually create it in the main directory structure. But if I do a ls-al, notice that it does create me an a.azureml subdirectory
+in that path. If I do an ls-al of.azureml, notice this is what
+it actually puts it, ws_ config.json., because
+you are going to have to remember that in your path as you're calling this as well. So let's go ahead
+and take a look at that configuration
+file cat ws_config, and you can see that the scope
+includes the subscription, includes the Iqai_workspace_1, and it includes the
+aidemos resource group. So now if I want to call this
+in a different environment, if I come back over
+here to my project, notice that I've got a
+call_workspace iPython Notebook. If I open up this call_workspace, from azureml.core, we're
+going import workspace, we're going to assign
+the ws_new_notebook, I'm going to assign
+this new_notebook to a workspace.from_config, and make sure you
+include the.azureml in the class otherwise
+we'll error out. If we call this ws_new_notebook, this is going to
+reference our name, our subscription_id,
+and our resource_group.

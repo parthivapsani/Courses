@@ -1,0 +1,77 @@
+The next step to
+deploy a model is to reference our read model
+that we built before. So from azure.core.model,
+we're going to import model. Let's go ahead and look at the structure of
+this API as well. So let's go ahead and do
+a model question mark. So here's the reference
+to the model. We need a reference,
+our workspace, our name, our ID, our tags, our properties, our+
+version number, our run_1D. Here's the description of
+the parameters as well, the workspace object
+containing the model to retrieve, the type of workspace, and notice that the
+parameter name will retrieve the latest model with the
+corresponding name if it exists or we can specify a
+particular version number and notice the type ID is string, and we have optional
+tags that we can build into our registered
+models as well. So let's go ahead
+and do a model.list. Model.lists requires our
+workspace and an optional name, whichever list of all the models associated with the
+provided workspace with optional filters. Here's a list of the
+parameters associated with it, so we do need to provide our workspace whenever we do a list. Just go ahead and look at all of our models that are registered with this
+particular workspace. Let's go ahead and print
+that response out. So here's my lqai_workspace_1. Name of our first model is bh_lr.pkl:1 that's the
+version that brings one, and you've got e=sklearn_bh_lr, that was three versions,
+so this is Version 3. We've got ld=lq_simple_train
+Version 1. So I've been kind of
+busy, as you can see. If we come over here and sign
+into Azure as your portal, and we come over here
+to a lqai_workspace. Another way to look at it is
+to come down here to models. You can see I have
+an AML_train_model, I've got an sklearn_bh_lr 1, an sklearn_bh_lr 2, and
+an sklearn_bh_lr 3. I've got an
+AML_train_model Version 2, I've got an lq_simple_train
+1 and a bh_lr.pkl 1. So those are the models that
+I have registered right now. So Version 3 of the
+sklearn_bh_lr is actually the one we're going
+to call here in a few minutes so
+remember that one. Let's go ahead and put a line. I'm trying to see this. Yeah, let's go ahead and bring up the references for
+getting out a path. Let's actually downloads the model path to
+our local directory. So it returns the
+path of the model, will search for the model
+in the following locations. There is none, we'll
+download it from their real cache or from
+the azureml-workspace. Aversion is Arnold download
+from the remote cache, and then we'll go ahead and
+download the Azure models, downloaded to azureml-models, model_name latest
+version, and model_name. The version is set to none. It will load the cache
+azureml-models, model_name, latest_version and downloaded
+from the remote cache, and here's all the
+parameters associated with this particular call. Yeah. Let's go ahead and
+see the output of this. So next we're going to. download the sklearn_bh_lr path. We're going to reference
+version number three and we're going to
+color our workspace. Notice the reference
+to the path that azureml-model/sklearn_bh_lr/3/bh_lr.pkl So that's the pickle file that we've serialized
+our model into. Again, if we come back
+here and do a bang ls, we've got an
+azureml_model reference. You'll notice we've got
+an sklearn_bh_lr and this is where initially
+downloaded this one yesterday. You've noticed we've got a
+Version 1 and a Version 3. So let's go ahead and
+look at Version 3, and this got a bh_lr.pkl that
+we downloaded last night. Let's go ahead and sign
+that model locally. So model equals model
+ws, sklearn_bh_lr. So when we call our
+model reference we actually have to
+reference a workspace, and we have to reference the registered model itself and it will bring up
+the current version. Square and print the model
+and see what returns from the model and let's
+go ahead and look at the type that the model
+represents as well. So notice that I've signed a model object to my
+model constructor. Notice we've got a model
+that references of my workspace with
+lqai_workspace, subscription_id, a resource_group, a name, an id to include the version, and the version number. Then if I do a print
+type of model, because it comes back as an
+azureml.core.model.mode, it's important to know
+that because when we reference this model later
+on in our deployment call, it actually has to be an
+azureml.core.model.model type.

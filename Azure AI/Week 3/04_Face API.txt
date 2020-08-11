@@ -1,0 +1,26 @@
+So let's create and play around with Face this in the Face API. So here I am and creating
+a new resource in Azure. Let's click on AI and
+Machine Learning. Let's click on Face. We're going to name it RJ's Face API. The deployment is underway. The deployment is successful. Let's go ahead and
+go to the Resource. Let's go ahead and copy our keys. Here's an example of the
+implementation of the Face API. Just like we've done before
+in the last two examples, we're going to import requests. We're going to specify
+the new sub-key. We're going to save the base URL and include a
+slash detect at the end of it. If I run this
+particular shell note, it comes back and
+gives me the string of the face API to make
+sure we've got it right. We've got our image URL. If we click on this one, you notice that there
+this guy right here. So we're going to implement our Subscription Key
+in a set of headers. The parameters that API is requesting is
+the return face ID, the return face landmarks, the return face attributes. This will go in age,
+gender, head pose, smile, facial hair, glasses,
+and motion, makeup. We've got to request that post. We're going to take our Face API that includes the slash detect. We're going to take our
+parameters that we're sending to the API. We're encapsulating our
+Subscription Key in our header, and then the JSON, in this case, is going to be a key of URL and the image URL that
+we're sending it. We're going to send
+a response.JSON and pprint the results. If we click on this, goes
+back with the age of 62, comes back with this
+emotion of happiness, comes back with no
+facial hair 0.1. Gender is male, he's
+not wearing glasses. See that the head pose, pitch, roll and yaw, eye makeup is false and
+lip makeup is false. Smile is one. Here's the particular face ID and the face rectangle
+that comes back.

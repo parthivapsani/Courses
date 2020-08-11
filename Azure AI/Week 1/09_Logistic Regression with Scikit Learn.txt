@@ -1,0 +1,117 @@
+In this tutorial, we're
+going to explore a little bit more about
+classification algorithms, specifically those ones that are implemented up there
+on scikit-learn. So since we're going to be
+interacting with scikit-learn. Scikit-learn is built
+on top of numpy. That's how we're going
+to reference her data. So we're going to
+import numpy as np , going to input
+matplotlib.pyplot as plt. That's going to give us access to graphing capabilities and we can actually look at what
+the digits look like. We're going to install
+our SKLearn modules. From SKLearn, we're going
+to import datasets. There is an eight
+by eight digits, about 5,600 of them. They are incorporated in a dataset that we're
+going to read in. We are going to ingest and work with Support
+Vector Machines. We're going to reference metrics. We're going to reference
+our linear model. We're going to use the
+train test split function from the model succession
+module and SKLearn as well. So let's run this inputs. We're going to load and
+explore the m-nest digits that are included in the
+scikit-learn datasets. So if I load digits notes, say a specific class. That scikit-learn now uses to implement this particular
+set of digits. So you can see that scikit-learn actually defines this as a bunch. If we look at the construct
+of digits itself, notice that it looks
+like a dictionary, so we've got a data array, a target, a target names
+which are zero through nine, and I've got my images of
+array as well with these are eight by eight images. Right. So eight by
+eight representations are for pixels in a numpy array. Just to show you and reference
+these as dictionary calls, we can see that digits,
+what type digital data is. We can see what data
+digits target is. It might get a little
+more of a description about the dataset
+1 itself as well. So let's go ahead and run
+this particular cell. So you can see that my data
+information as numpy array. A target information
+as a numpy array. If we do our description
+of our digits dataset, this is optical recognition
+of how to read digits. You see there's 5,620
+instances or observations, and each observation
+has 64 attributes and those attributes are
+an eight by image of integer pixels from the
+range of zero to 16. So it's grayscale. So this is a copy of the test set of ML
+had written or just dataset. Ten classes where each class refers to a digit
+zero through nine. Let's go ahead and use matplotlib
+to display some images. Since I'm specifying figure size, and this is one of the first
+four loops that you've seen, notice in Python that for
+loops need to be indented. So for elements and image and label and the
+specific references, we're going to use is a zip of the digits.data
+and digits.target. We're going do a
+plt.subplot 1-10, and then we're going to
+increment our element. So we are using the
+digits.data 30-40. We're going to come back
+with 10 different digits. Then I take my array based data, that's in that dataset. I'm going to run a IM show
+reference in matplotlib. We're going to reshape
+our images and make sure they're eight by eight and
+capture that in grayscale. We're going to put
+the label as part of that as well. So let's
+go ahead and run this. So you can see this is
+image number 30 through 39. Image 30 is a zero, image number 31 is
+reference, is a nine, image number three is
+labeled as a five, image number four is
+labeled as a five, image number five is
+labeled as a six, image number six is labeled
+as five, and so on and so on. So scikit-learn has a nice
+train test split function. Scikit digits are broken
+down into data and labels. Notice that we're
+going to do a G-train, a D-test, an L-train, and O-Test. We're going to see
+that too are training test split where
+our first argument, in train and test
+split is our data. The second argument
+is our target label. Data center, we're
+going to specify that our test size is 25 percent. So that means our
+training size is going to be 75 percent. Understood? We're not randomizing our input at this point. So let's go ahead and run this. Let's go ahead and try
+a couple of logistics with models is the way that we're going to try to encapsulate
+a discrete variable. Logistic regression is used
+for classification problems. From SK Learn.linear model, we're importing
+logistic regression. I'm then go on instantiate a new variable called LR class, and we're going to assign it to logistic regression of the, find a type of logistic
+regression class that implements a model for us. The LR class is now linear
+model logistic regression. Now in order to train that model, we need to run a fit function or a fit method off of our LR class. So you can see here I'm
+going to do an LR class.fit. We're going to feed it
+our data and our labels, and that is we get a little
+deprecation warning area, and it's just a warning, so there's nothing we
+need to worry about. Now we have a trained
+logistic regression model. So let's go ahead and predict
+on our trained model. So to predict on our trained model we're going
+to specify the LR class. You're going to predict
+method off of it. So the first thing
+you have to do is instantiate your
+algorithm and then you're going to run a fit off of it train a model and
+then you're going to better predict off of that trained model to
+come up with a result. So we're going to do a
+D test of zero which is the first element of our tests. I'm going to reshape that
+to one and minus one. Notice it comes back as an
+array with the value two. That means that the
+first element of the test set thinks it's a two. I'm going to do this
+across multiple elements of the array as well. So you can see the first
+elements came back as a two, the second one came
+back as an eight, the third one came
+back as a two etc. Recall that we did import a support vector machine and this Support Vector
+Machine module as we imported SKLearn appear. So let's go ahead and implement a Support Vector
+Machine model as well. Remember Support Vector Machine looks for points
+that are close to a hyperplane that separates the two different labels
+that I'm looking for, two different classes
+that I'm looking for. Very similarly, we're
+going to implement an SVM class by calling the Support Vector
+Machine module.svc. We're going to do SVM class.fits again with our training
+data and our labels. Let's go ahead and
+run this. This will Institute a Support Vector
+Machine class for us. Then we're going do is Support
+Vector Machine predict on the first element
+of our test set, and that's it, comes
+back as a two as well, and we are going to
+do the same thing, we're going to predict
+via the first ten values of our test set as well. Two, eight, six, six,
+seven, one, nine, eight, five, and notice it comes
+up with the same result. So when review, we just
+loaded some data in, we split it into a training
+set and a test set and we ran some logistic regression and Support Vector Machine
+classifiers off of them

@@ -1,0 +1,57 @@
+Here I am in Azure, and I'm going to show you how to build
+a text analytics cognitive services API. So let's go ahead, and
+I'll do a search for text analytics. As you can see here, we're going to
+create a text analytics API reference. Let's go ahead and name it lq_ta_example. It requires the dash. Free trial, location where I
+put everything else is US East. Now we're going to select
+the aidemos resource group. Let's go ahead and click on Create. So you can see your
+deployment is underway. And your deployment is conceded, and
+let's go ahead and go to the resource. So here's the API key to authenticate. Here's the endpoint that we're
+particularly going to use. And notice, there's an API console that we
+can use to go ahead and play with things. Let's go ahead and
+open up a TextEdit document. In order to copy our key, and copy our
+endpoint, just so I have it available. So now that I've got a Cognitive
+Services API-Text Analytics endpoint, let's go ahead and
+see how to call that in Python. So to understand,
+I'm going to install requests for my API call, we're going to make sure
+it's upgraded to the latest version. We're going to import requests. And we're going to print out the JSON in
+a nice way we're going to do a p print. We're going to store our sub
+key into a Python variable. We're going to reference our base
+URL as an environmental variable and set the sentiment analysis URL to that
+plus /text/analytics/v2.1/sentiment. The documents that we're going to
+send across that we're going to save into this documents
+variable is a dictionary. As you can see we've got documents id,
+1, language English. And then I've got the first verse
+to Don McLean's American Pie. In order to implement our requests, we're going to specify a header
+where we store our subkey. Then we're going to do a request.post
+where we send the API URL. The headers and the JSON reference
+that's saved in this documents frame. And we're going to save that our
+response.json into a sentiment variable. And we're going to do pprint on that. And you can see that the first
+verse of Don McLean's American Pie comes back with a sentiment score of 0.15. So it's not a very happy song. So let's break each
+slide down individually, so you can see it I've changed. My particular reference looks like
+an arrow right there, that extra comma. So notice that I've changed my ideas and every single line in the first line
+of American Pie by Don McLean. Is now being passed separately. Let's go ahead and run this. I forgot my comma here. And let's go ahead and run this. A long, long time ago 0.86. Here if I had my chance,
+I can make those people dance, 0.88. But February made me shiver, 0.27. Bad news on the doorstep, 0.07. I can't remember if I cried, 0.07. And something touched me deep inside,
+the day the music died, 0.11. If I change the structure of my JSON, just a little bit you can
+also do language detection. So, of course we're not going to include
+a language metadata in my new document. So, id 1 text, a long long time ago,
+id 2 mi qusto el futbol, and id 3 with a text of
+parlez vous francais? Then we're going to change url to
+text/analytics/v2.1/languages and then we're going to call it response.json,
+and then we're going to redo a response
+to call the language API, That I've specifically set here and
+named the lang_api. We're going to specify the headers,
+we're going to specify the new document. We're going to save the response
+at a languages object. And we're going to print
+the languages object data as well. And I'm going to comma over here. So you can see that the first
+document came back as English. The second document came back as Spanish. And a third document came back as French. And you can see what your
+confidence score is there as well. Here's an example of entity analysis. So once again, I've changed my document. Document number 1 is I would
+like to travel to Paris. Document number 2 is my favorite
+book is The Hobbit by JRR Tolkien. And document number 3 is would you
+like to visit the Statue of Liberty in New York City? I've changed my API
+reference to /v2.1/entities. I've changed my API call to
+text/analytics/v2.1/entities. We've called that in our requests and
+save that into a languages API. We've done a post on a request and
+saved that into languages object. Let's go ahead and do a p print of that. And you can see that we've got Paris,
+that's a location. You got The Hobbit, Which is a book. We've got the reference to the book. We've got JRR Tolkien, which was a person. And we got a Wikipedia URL. We've got the Statue of Liberty. There's this location. And again, we have got a Wikipedia
+article about the Statue of Liberty. And I've got New York City,
+which is also a location.

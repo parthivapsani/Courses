@@ -1,0 +1,29 @@
+Let's discuss the choices you have when
+you're thinking of using Azure for artificial intelligence. One of the common first decisions you
+have to make when contemplating building a machine learning solution is,
+do you want to build your own model or use a pre-trained model
+provided as a service? And Azure offers components
+that fill both of these needs. The first choice we have
+is a cognitive API. They're broken down into
+five overarching types. We've got knowledge that builds data
+intelligence into your application. We've got got language, that does and
+handles natural language processing. We've got search,
+which uses Microsoft's Bing technology. We've got speech to include dictation,
+transcription, voice command. And we've got vision, that provides
+analysis of pictures and videos, and you could do things such as object recognition
+and facial expression analysis. But what if these don't meet your needs? You can actually build your own. So either Azure Machine Learning Studio or
+the Azure Machine Learning Service. Let's go ahead and compare and
+contrast both of these right now. ML Studio is code-free. It's drag and drop. It is, however, proprietary. You can use Python or R to extend and enhance the functionality
+that's built into ML Studio. And ML Studio was one of the first
+services that would actually deploy your model as a web service. A newer, more flexible service is actually
+is actually Azure Machine Learning. It operationalizes the process
+of building AI solutions. You can develop locally, and
+then once your model is developed. Azure Machine Learning Services
+provide compute targets for training, packaging, validating, deploying and
+monitoring your cluster, everything you need to do in
+a data science life cycle. The primary way you access your
+machine learning resources on Azure is by creating a workspace. Take a model that you like,
+register it with a workspace after you've developed it on your local platform,
+and then use the registered model and scoring scripts to deploy is Azure
+container services for testing or as or Azure Kubernetes and
+an IOT end point for production.

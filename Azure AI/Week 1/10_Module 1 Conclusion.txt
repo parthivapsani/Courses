@@ -1,0 +1,15 @@
+Welcome to our summary of AI definitions. In this course we defined artificial
+intelligence as the simulation of human intelligence in computers. We also defined the ideas
+of machine learning, Where the machines mimic
+the way that humans learn. We also explain some common
+machine learning tasks and algorithms such as supervised and
+unsupervised machine learning, And classification and regression in addition. We described some of the common
+languages used in data science. The main ones being Python and R. And then we delve down into some
+basic Python to show you how we're going to interface with that
+language in this particular course. We described the Python Scientific
+Ecosystem to include NumPy and Pandas and the graphing capabilities in Matplotlib. And we introduced you to the development
+environments of Visual Studio code, And Jupyter Notebooks. We also introduced you to some open
+source resources for solving machine learning problems and implemented some
+solutions in Scikit-learn as well as describing the details of other libraries
+that are available such as PyTorch and Tensorflow and Matplotlib and
+most recently Keras as well.

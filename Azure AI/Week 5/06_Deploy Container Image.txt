@@ -1,0 +1,69 @@
+The next step in deployment is to actually deploy
+your Webservice. The particular method
+and object we're going to call now was a
+[inaudible] constructor. There's the Webservice
+constructor, actually takes a Machine Learning model and implement it as a Webservice in the specific compute
+target that you specify. So here's the
+Webservice constructor, and here's that the particular
+parameters that it takes. A workspace, the name of the Webservice
+object to retrieve, and what actually we're
+going to call it. So the name notice here is
+going to be housing predictor. Let's go ahead and see
+the methods that are available of our Webservice. That's where you've got
+a Webservice delete. So we can program really
+delete a Webservice. We've got a Webservice.deploy, and then we've got a
+deploy from image, since we've created an ACI image, that's actually the one
+we're going to use. We can do deploy from model, we can do deploy
+from local model, we can do deserialize, we can then do a webservice.list to go with the deployments
+that are already out there. We do websevice.run, webservice.update
+that do the version of the particular Webservice. But let's go ahead
+and deploy from a model which we're going to do a
+webservice.deploy_from_model. The name of our
+deployed Webservice is going to be housing-predictor. We're going to use
+our deployment_config that we showed you in
+the last exercise. Notice that it requires
+a model that's a Python list of the model
+that we want to deploy. The type of model we want
+is the AML model of course, like we ran up here. Also, we come up here and we look at this
+particular reference. When we deployed our model and remember when we
+did print type of model up here it came back
+azure.core.model.Model. This is the type that we need to call when we're actually
+running our deployment. We're going to specify
+an image_config and here's our image_config
+that contains our score.py and our runtime and our file to make sure that our dependencies are taken
+care of and then of course, we're going to call our workspace which is implemented as ws. We're going to go ahead and this can take
+several minutes. We're going to do a service.wait,
+and we're going to get the output of the logs
+right here on the console. We're going to do a
+service.wait for deployment. So let's go ahead and deploy our Machine Learning
+model is a Webservice. So you can see that it says
+it's creating the image. You can see that it's running [inaudible] succeeded
+in creating the image. And notice that I've got an image called "housing-predictor:9" and the operation is succeeded. In there created the service
+based on this image that we created and then we have
+running and then we have a succeeded ACI
+service creation operations finished and operation
+"Succeeded". But come over here to Azure, come back over here
+to all services, and let's go ahead and go down
+into our lqai_workspace_1. Go ahead and look
+at our deployments and load and behold this we have a housing-predictor
+deployment. Click on housing-predictor
+deployment. The status [inaudible] ,
+the compute title was ECI, the service idea is
+housing-predictor. We didn't implement
+any tags and here's the creation date and
+the last updated. Here's the scoring URI source the score.py and we can take a
+look at it if we want to. All right. Here's the CPU. So here's the API
+reference we're going to use and notice that it's one CPU and one
+gigabyte of memory. The models that are
+implemented on this one are the sklearn_bh_lr
+version 3 created on 10/22/2019, and the images that we use for this
+particular deployment is our housing-predictor
+image version number 9 and that's this
+state was succeeded. It was created on 10-22 and we can also look at our images here. There's housing-predictor
+number 9. So here's the ID. Here's the date it
+was registered. Here's the version number of it. Here's the location of it. The type of Docker and the status succeeding but also look at the models that
+are implemented on the particular image. So the model is sklearn_bh_lr3
+and we see the location of the particular asset associated
+with the model and we can look at the deployments that use this particular image as well which is the housing deployments. So you see models and images and deployments are
+related to each other, and we have successfully
+updated deployment.

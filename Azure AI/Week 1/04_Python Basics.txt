@@ -1,0 +1,16 @@
+Welcome, everyone. In this video,
+we're going to cover some Python basics. Python is high level. It's interpreted. It's free and open source. It supports structured, functional,
+and object-oriented programming. It's loosely typed. It runs on all of the popular
+operating systems. It's important remember than indexing
+starts at 0, like C and C plus plus. And indentation is important when
+you send code to the editor. Here are some of the basic data
+types that are included in Python. You can see here, we've got an int,
+we've got a float. We've got a complex. We've got a Boolean,
+and we've got a string. I suggest that you please review
+the demo on Python variables. That will show you a few more details. Here's the basic Python
+collections we have. To include a list, we've got a set. we've got the idea of a tuple and we've
+got the idea of dictionaries as well. Packages are public repositories
+that contain libraries. Libraries contain modules
+that incorporate function. And if you need to use one
+input them before they're used. And usually that happens
+to the top of the file. Here are a couple of examples.

@@ -1,0 +1,25 @@
+Now that we've
+created a workspace, let's describe the next
+steps you're going to use to train a model, that is your machine learning. If you want to persist a compute, we're going to create that and attach it to your
+workspace or you can call it programmatically
+to make it scalable. You're going to implement a
+run configuration to setup the required dependencies needed to buy your training script. You're going to
+create an experiment. Here we're going to submit or run the computer environment. We're going to wait for
+that run and compute, and if you've done
+everything right, you will have a
+flashed out model, you can then register to Azure
+ML for deployment later. Remember deployment is
+in the next chapter. Should have create
+a channel model, we're going to start
+locally, and then we're going to create an
+experiment and will back it on figuration and specify
+compute target. So what compete
+targets do I have? We have local computer, this is self-explanatory, it's always where
+we're going to start. Manager Machine Learning Compute, we have remote VMs available
+to us that we can persist. We've got Azure data breaks and Azure HD insight if you need transformations and
+you're data done in preparation for
+further analysis. You've got Azure data like analytics and we've got
+a Azure batch as well. So what Azure machine learning
+in service lets you do, and what we're going
+to talk about now is developing the model locally, changing the model locally and registering it in the Cloud, and then train the model and the Cloud and
+registering it as well. Then we're going to validate the model, deployed the model, and moderate it and retrain it as necessary, and the pipeline.
