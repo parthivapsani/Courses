@@ -1,0 +1,133 @@
+Hello my name is Arun. I'm a Senior Technical
+Product Manager and I want to talk with you about
+Amazon Comprehend Medical. So what is Amazon
+Comprehend Medical? Comprehend Medical is a
+set of hyper-eligible ML powered APIs built specifically for the healthcare domain. It makes it easy to
+extract and structure information from
+unstructured medical text. It does this with state
+of the art accuracy, helping developers
+build applications that can improve
+patient outcomes. Comprehend Medical makes
+advanced medical text analytics accessible to all developers
+with no upfront costs. What problems exist that
+Comprehend Medical can solve? More than 90 percent of
+healthcare providers use electronic health records
+to store a patient data. Although there are few
+structured fields in an EHR, most of the valuable
+patient-care information is trapped in a free
+form clinical text. An example being admission notes, patient history, or
+discharge notes. However, extracting value
+define insights from unstructured clinical notes is a manual and
+labor-intensive process, creating a bottleneck
+that slows down analysis that could result in better
+health and business outcomes. You might be asking, how does Comprehend Medical actually work? Well, it is an extension
+of Amazon comprehends natural language
+processing models for entity extraction
+of medical texts. It uses deep learning to
+extract entities from unstructured text in
+the healthcare field such as clinical notes
+and radiology readings. Amazon comprehend leverages the latest advancements in
+machine learning to bring a high level
+of accuracy and efficiency to extracting
+clinical information. Comprehend Medical
+consists of two APIs. The NERA API, which will return a JSON with all
+the extracted entities, their traits, and the
+relationships between them. The second API is the
+PHId API which will return just the protected
+health information contained in the text. Developers can easily integrate
+Comprehend Medical into their data processing pipelines with tools like Amazon glue. They can also access it
+from SageMaker and extract structured data to build accurate models for
+health care use cases. Once the text is extracted, it can be stored in
+services like S3, Aurora, RDS, and Redshift
+or any third party service. What does this mean for you? Comprehend Medical can
+help improve outcomes. Identifying a high-risk
+patient on time will prevent further complications
+for the patient and reduce the financial costs
+for the health system. This data is also valuable for use cases such as clinical
+decision support, revenue cycle management and
+clinical trial management and it's difficult to use without significant
+manual effort. The ability to
+extract and structure information from unstructured
+medical text with state of the art accuracy
+no longer requires you to be a medical or
+machine-learning expert. Comprehend medical makes
+advanced medical text analytics accessible to all developers
+with no upfront costs. Comprehend Medical's current
+performance has been better than what we have
+seen in academic benchmarks. Well, how about we take a look at Comprehend Medical right in the console so you can get an even better idea
+about how it works? So let's take a look
+at Amazon Comprehend medical's console. Here we have a de-identified
+clinical node, I'm going to run it
+through the service. So here what we return is the actual insights from
+this analyzed text. You can see that the color is specific to a different
+entity type that we extract. Here the orange is basically for PHI, Protected
+Health Information. Here green is for
+medical condition and we actually have
+something called entity traits that, one is negation. So if for example, a patient denies taking
+some medication, that medication would be negated. Then we show whether a
+diagnosis is a sign or symptom. Why that's important is that
+when you work downstream, it's very important to have that differentiation
+in order to fit into a lot of workflows that exist with our health
+care customers. What we also do with
+relationship extraction is we tie the subtypes
+to the parents. So for example here, the test name is platelet count and the actual value is
+varied significantly. So you here you can see through the UI that it is
+connected to the parent. What we've done with this is, we want to make it really easy
+for customers to sift and sort through this
+data not through simple searches but
+more complex ones. So you can actually search, for example, medication also
+has relationship extraction. You can search dosages
+for medication. So what we do is, we
+tie the medication to the dosage route or mode,
+the strength frequency, and so you can make
+simple searches about how many of my patients are taking a certain dosage
+of a certain medication. In the end, we want to
+make this easy to use. We're really trying to distill a complex process into
+a very simple API call. Moving further, you can
+see another example of relationship
+extraction here under Vital Signs is temperature. So temperature is the test name and the value is 36 and
+it's connected to it. So it's very easy for our customers or for you
+to visually look at this and see how well our ML
+powered models are working. Moving further down
+in the console, you can see like we actually
+have a list type or we list all the entities and
+you can actually see the category and if any
+traits are associated. We also provide the
+conference score so you can see how well our models are performing on the unstructured data that you're running
+through the service. You can also sift and sort through this data
+as you deem fit. So essentially, if I
+wanted to look for example at test treatment
+and procedures, you can actually see the
+platelet count and under it, what the relationship was with the subtype and we provide
+that here as well. You can also close it. So again, we're trying to make
+this very easy to use and very easy for our
+customers to sift through. Honestly, very dense data very, very difficult to structure data. These will make it for you, the better you can
+use the service and obviously scale it for
+your specific use cases. Moving on to the JSON output,
+you can see here again, we make it as easy as
+possible and some of the identifiers that
+we have are ID, the offset like where it's
+located in the clinical texts, the actual score, the text and the category as I showed
+earlier, and the subtypes. So here the type for
+Labahn Hospital, it's under PHI, protected health information
+and the type is address. If you move further down you
+can see where we actually nest in the subtypes when we talk about
+relationship extraction. So now going back to the
+example of platelet count, you can see that
+that is a test name. It's under the category of
+test treatment procedure and the actual value below
+it is varied significantly. So again, when you
+take this data out of Comprehend Medical and
+put it into any database, it could be dynamo,
+it could be redshift. We want to make it very easy for you to
+search through it, and we believe that this
+format allows you to do that. With that, that's pretty
+much what the service does. We've really tried to take
+a very complex process and make it easy
+for our customers. We believe that if
+we can if we can do a lot of the heavy
+lifting and the hard work, we can actually enhance
+our customers to build all the really cool applications that can really change
+and impact healthcare. Thanks for learning about
+Amazon Comprehend Medical. On behalf of AWS,
+thanks for watching.
