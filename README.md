@@ -1,4 +1,5 @@
 # Courses
+
 Code and notes for courses, certificates, and other educational opportunities
 
 Currently in progress:

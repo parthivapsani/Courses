@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/parthiv/Documents/College/Courses/Algorithms on Graphs/Assignments/Week 5/connecting_points.cpp
+algorithm
+-
+iostream
+-
+iomanip
+-
+vector
+-
+cmath
+-
+
