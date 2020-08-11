@@ -1,0 +1,107 @@
+Welcome to this introductory
+course on AWS DeepLens. The world's first deep learning enabled video camera
+for developers. I'm Jyothi Nookula and I'm a senior product manager
+on the DeepLens team. Today, I'll show you how to get started building AWS
+DeepLens projects. We'll look at the
+device's hardware, the architecture, and some
+sample project templates. At the end, I'll demonstrate
+building a project using the object detection
+template from the AWS DeepLens console.
+Let's get started. At Amazon, we have
+been working on machine learning for 20 years. We know there's no
+easy way for you as a developer to learn
+machine learning, and test and
+prototype your ideas. So we decided to
+put deep learning into your hands literally. AWS DeepLens is a wireless
+enabled video camera and a development platform that's integrated with the AWS Cloud. It lets you use the latest artificial intelligence tools and technology to develop
+computer vision applications based on deep learning models. Before we start
+building projects, let's take a look at
+the actual device. What makes our AWS DeepLens
+stand apart is the on-board accelerator that is capable of delivering 100
+gigaflops of compute, which means it can run 100
+billion operations per second. So how do you take this device and actually build something? For that, you need to understand the general workflow for an
+AWS DeepLens deployment. To create and run an
+AWS DeepLens project, you typically use
+Amazon SageMaker, AWS lambda, and AWS green grass. You'd use Amazon SageMaker
+to train and validate a custom machine learning model or you could import
+a pre-trained model. AWS lambda functions in DeepLens perform three
+important operations. Pre-processing, capturing inference,
+and displaying output. Once a project is
+deployed to DeepLens, the model and the lambda function can run locally on the device. AWS DeepLens creates a computer vision
+application project that consists of the model and
+inference lambda function. AWS Green grass can deploy the project and a lambda
+run-time to your AWS DeepLens, as well as the software
+or configuration updates. This diagram illustrates how these services come together. First, when turned on, AWS DeepLens captures
+a video stream, it produces two output streams. The device stream, which
+is the video stream passed through without processing
+and the project stream, which contains the results of the model's processing
+video frames. From there, the inference
+lambda function receives unprocessed
+video frames and then passes those
+unprocessed frames to the project's deep learning
+model for processing. Finally, the inference
+lambda function receives the process frames back from the model and passes them
+on in the project stream. We don't really show
+it in the diagram, but AWS DeepLens is well integrated with
+other AWS services. For instance, projects
+deployed to AWS DeepLens are securely transferred
+using AWS Greengrass. The output of AWS DeepLens when connected to the Internet, can be sent back
+to the console via AWS IoT and Amazon
+Kinesis video streams. So now, we're ready to
+start building, right? The reality is, most
+of us don't have the skills to build a convolutional
+neural network model. That's why AWS DeepLens offers ready to deploy
+sample projects, which include a pre-trained convolutional neural
+network model and the corresponding
+inference function. AWS DeepLens offers seven sampled project
+templates ready-to-use, including templates such
+as object detection, hot dog/not hot dog, artistic style transfer, activity recognition,
+and face detection. With these sample projects, you can get started with machine learning in
+less than 10 minutes. These templated projects
+can be edited and extended. For instance, you could use the object detection
+project template to recognize when your dog is sitting on your couch
+and have the application send you an SMS to notify
+you of this event. Of course, you can
+also create, train, and deploy your own custom
+model to AWS DeepLens. The development platform
+supports a variety of deep learning
+frameworks including MXNet, TensorFlow, and Caffe. Now, let's take it for a spin. We'll deploy the object
+detection project. The project uses the single shot multi
+box detective framework to detect objects with a
+pre-trained resonate 15 network. The network has been trained on the Pascal VOC dataset and can recognize 20
+different objects. The model takes the video
+stream from your AWS DeepLens as input and labels the
+objects that it identifies. It's a pre-trained
+optimized model that is ready to be deployed
+to your AWS DeepLens. After deploying it, you
+can review the objects your AWS DeepLens recognizes around you through the console. Let's see what it
+looks like in action. I'm starting here in the
+AWS management console. In the search bar, I'm going to type DeepLens. Now, we're looking at
+the project screen. If you don't see the
+project list view, click on the
+''Hamburger menu'' on the left and select projects. Select "Create new
+project" on the top right, choose "User project template"
+and "Object detection", and scroll down the
+screen to choose next. I'm going to accept
+the default values, scroll to the bottom
+and select "Create". It can take a few moments for the project creation
+to fully complete. You can verify that the
+project was created successfully once the
+description field has a value. You may need to refresh your browser window if this
+value isn't populating. Now that the fields
+are populated, choose the radio button for the project and select
+deploy to device. On the target device screen, choose your device from the
+list and select review. Now, it's time to
+review the details of the deployment and
+select "Deploy". The process to
+deploy the model to your DeepLens can
+take a few minutes. You will know that
+it is completed when the blue banner
+changes to green. In the project output tab, copy the unique topic
+for your AWS DeepLens. Choose AWS IoT console and
+paste the unique topic, to subscribe to a topic. You can review the results
+of DeepLens detecting different objects in the room and printing the
+confidence code tool. Notice, as I change what
+the DeepLens can see, it will report that at
+the bottom of the screen. Now, let's change it to a bottle. Now, you have seen the
+power of DeepLens. I'm Jyothi Nookula with AWS. Thanks for watching.

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/parthiv/Documents/College/Courses/Google Algorithms/Assignments/Week 4/school_bus.cpp
+iostream
+-
+vector
+-
+bitset
+-
+
