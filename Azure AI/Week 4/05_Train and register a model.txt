@@ -1,0 +1,44 @@
+Should I that I've created a workspace? Let's go ahead and use that workspace to
+train one of our earlier sklearn models. From as your ml core import workspace, and we're going to call the workspace
+that we created earlier. And now let's run a wsdl get details
+to get the details of that workspace. So you can see we've got
+our subscription ID. But I Resource Group and
+our lqa, I workspace one. Got a recognizable name. We got a location. We've got a friendly name. We got our key Vault and
+we got our storage account. So let's take this linear
+regression example. We're going to train it locally and
+then register it with Rai workspace. We're going to import numpy
+as MP import pandas is p Import matplotlib py plot is PLT. We're going to look at
+the Boston Housing data set again. I don't want to do a load Boston. We do a training test split. for muscular leader a bottle
+of Port linear regression and we're looking at price per room
+in order to do a fit on that. And let's get then go ahead and do a dump
+of that into BH underscore LR P KL. So we're taking our price room
+environmental variable that reference in our model and we're seeing that down
+to a BH l r dot P KL file locally. You can see we are Creator BH underscore
+l r dot P KL and let's go ahead and list our local directory now to make sure
+that that BHL our packages in there. Then you can see that it is. if we do an LS Dash l You can see that it's the last thing that we particularly
+created it and it is the correct time. So let's go ahead and
+register this with her workspace. So we're going to go into import for
+model. I'm going to do a model dot register. We're going to reference our workspace
+reference our local model path. And we're going to name the bottle
+Boston and housing LR so you can see that we registered our model. if I come over here, it was your and
+we'll look at models and we do a refresh this we've got a Persian to over
+Boston Housing LR that was created at 525. She get didn't say we can see that we
+did successfully create a model and register a model. And now I can take that model and deploy
+it to whatever deployments compute Target we want to and
+then serve that up as a web. Based API. That's actually what we're going
+to cover in the next chapter. So now open the register that model in our
+workspace we can now call that model but another object. So in this case my model equals
+model Works basic was ws and the name of the model that we created and
+I could do a model dot download. This is initially going to error out. Because the BH L RP klrt exists,
+so if I come over here and look at the documentation for the download
+method, there's that we've got say exist. Okay equals false. Let's go ahead and change that exist. Okay to equals true and you can see if I do bang LS Dash l Exceed that it replaced RB H LR P KL
+with one from this exact time. So this gives 1748 and it is 1748. So did replace the one
+that was currently there. Let's go ahead and
+get rid of this reference and finally make it to a my model dot delete. Pull up particular method reference for
+this one. Delete this model from its
+associated with space. Just go ahead and delete my bottle and
+if we come over here. somebody very very fresh original
+where you can see that we've I deleted the version to the box
+that house until our Advocate. Delete this other one. If we wanted to hear in the UI as well,
+so click on the check mark and click on delete if you want
+to delete the other one.

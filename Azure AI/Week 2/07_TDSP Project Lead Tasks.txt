@@ -1,0 +1,48 @@
+In this video we're going to
+discuss the project lead tasks. We're going to show you how
+to create a project repo. We're going to see the project repo
+from the team projects template. And then we're going to get
+a little bit more into DevOps and create a feature work item and
+then stories for project phases. And then of course one other step if you
+have a multi-personnel team is to set up security controls and provide access. Here I am in my Azure DevOps interface,
+and this is my lqaicourse organization. And previously we've demonstrated
+in other videos how to create a group common team, and
+then how to create an LQDevOps team. The first step for the project
+lead is to create a project repo. Let's go ahead into LQDevOps team project. Let's click on Repos. Under LQTeamUtilities let's
+click on New repository. The type is going to be Git. And let's go ahead and
+create an LQDataScience repo. And if I come over here and click on
+Repositories and Manage repositories. This we've got an LQDataScienceProject1,
+we've got an LQTeamTemplate, and we've got an LQTeamUtilities. Now let's go ahead and input the team
+template into your project repository. Here's our LQTeamTemplate. Let's go ahead and
+clone our repository name. Come back over here to our repos. Hoover our DataScienceProject1. Click on Import Repository. Here's the URL we're going to clone. And we're going to click on requires
+authentication, we're going to enter the username, we're going to enter
+the password that we just copied. So let's change our default Agile approach
+in DevOps to a team data science template. In my lqaicourse organization I'm
+going to click on organization settings. I'm going to come down here and
+click on Boards and Process. Notice how we created an Agile
+data science process under the Agile default reference,
+and let's click this. Under epic the click on,
+let's click on Disable. This also disable features,
+user stories, and tasks. Now let's select the Backlog level tab and
+enter Epochs, click on Edit, and rename. Yeah, let's name this TDSP Projects. Under the new work item also put
+TDSP Projects, and click Add. And then make sure that
+the TDSP Projects is checked. And under the default workout and type
+click on TDSP Projects, and click on Save. Do the same thing for Features. Features is now disabled. Click on Edit and rename. We're going to change this to TDSP Stages. going to add a new work item type. And we're going to add
+business understanding, and we're going to add data acquisition. And we're going to add modeling,
+and we're going to add deployment. Click on Save. We're going to rename
+stories to TDSP Substages, add a new work item, click on Add. And set the default work item
+type type to TDSP Substages. And finally under Iteration Backlogging,
+click on Edit, add a new work item type. It's going to be TDSP Task,
+and click on Add. And set it to the default work item type. So under blacklog levels notice
+we've got TDSP Projects, got TDSP Stages, got TDSP Substages,
+and we got Tasks. The next step is to create a project
+based on this new template. So back here in our organization,
+let's click on new project. Our project name is going to
+be LQDataScienceProject. Under Advanced let's click on our Agile
+data science process, and click on Create. Here on our first project, let's now
+click on Boards, let's click on Backlogs. And we're going to click
+the on the TDSP Projects to define backlogs, and
+click on Save and Close. So let's click on TDSP Projects. Let's click on New Work Item, and let's
+click on Project1, and add to the top. And then to add a work item
+we're going to do a plus and click on Business and Understanding. Here's one example of a backlog
+with high level tasks, substages, and tasks actually assigned.

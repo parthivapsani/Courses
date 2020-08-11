@@ -1,0 +1,20 @@
+Here's a description of each
+of Azure's cognitive APIs. They're broken down into five
+major categories and types. Decision helps you with
+the decision making. Language helps you with text based
+natural language processing. Search builds all sorts of search
+capabilities in your applications. Speech provides dictation,
+transcription and voice command control. And vision provides analysis of videos and
+pictures is object recognition and facial expression analysis. So to view the cognitive to
+APIs in a little more detail. Vision API provides image analysis,
+the language API provides tools for text analysis. The speech API provides speech-to-text and
+text-to-speech. The search API provides all sorts
+of capabilities to add search gear applications. And decision enables
+informed decision making. Let's go ahead and look at a little
+bit more detail about the vision API. The vision API includes computer vision,
+face recognition, a content moderator,
+a video indexer, custom vision, and as you can see here an Ink Recognizer and
+a Form Recognizer that are in preview. The steps for using computer vision, include trying it out. Creating a computer vision API cognitive
+Services API from the Azure portal, referencing the API keys on
+the quick start page, and then call in the program programmatically. The next video I have in this unit, actually discusses this
+in a little more detail.

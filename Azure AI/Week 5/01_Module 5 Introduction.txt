@@ -1,0 +1,6 @@
+Looking to module five. Module deployment with Azure ML Service. The objectives of this module is to
+demonstrate how to connect to an existing workspace programmatically. We're then going to explain how to
+reference a model trained in the cloud. Based on previous training
+that you've done. We're going to describe the steps
+to deploy a model in the cloud. We're going to implement a scoring script. And finally, we're going to learn
+how to understand how to deploy and test a model of registered in Azure.

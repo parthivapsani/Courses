@@ -1,0 +1,5 @@
+To summarize this module, in this module, we demonstrated how to connect to
+an existing workspace programmatically. We explained how to reference a model
+trained in the cloud with a model registry. We described the steps required
+to deploy a model in the cloud. We implemented a scoring script. And finally, we showed you how to deploy
+and test a model registered in the cloud.

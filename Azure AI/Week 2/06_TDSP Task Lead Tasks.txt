@@ -1,0 +1,61 @@
+Welcome to the video
+that discusses team lead tasks and the
+team data science process. The first step we're
+going to do is create a team project individual DevOps, we're going to rename some
+of our team repositories, we're going to create
+a team template repo, we'll import the
+group utilities and templates and the
+appropriate team repos, and if needed to, we would
+set up security as well. Let's go over to
+our browser window, and you can see I've got
+the front landing page for my LQ AI course
+DevOps organization. The next thing we need to
+do is click a new project. I'm going to name
+this my LQDevOpsTeam, and the description
+we're going to put is my awesome DevOps team,
+and under advanced. Our version control is
+going to be a git and our work item process
+is going to be agile and let's click on Create. So under the DevOps team
+project that we just created, let's click on repos
+because the second step is to rename our default
+repository to seem utilities. Just click on repos. Let's click on
+Manage Repositories. Right-click my LQDevOps team and click on Rename Repository, and we're going to name
+our repository name LQTeamUtilities. The next step is to create
+our team template repository. I'm going to click
+on new repository, the type of repository is git. The repository name can be LQTeamTemplate, and let's create. I refresh the page and notice under my Manager
+repository and I've got an LQ team template
+and the LQ utility. Now, we're going to go
+to our team template. The next step is to import the contents of the group common that we created earlier. Over here on the right-hand
+side let's click on repos, and notice my default LQ
+team template comes up, and it tells me that
+it's currently empty. So here I have my
+LQ team template. Let's import our group
+project template into this new team set
+of repositories. So we're going to click Import. Here's our URL, https://dev.azure.com/lqaicourse/GroupCommon/_git/ GroupProjectTemplate
+and let's click Import. This particular error comes up. Import request cannot be processed to what are
+the following reasons. It turns out we need
+a git authorization. So let's close this. Let's come back over here to
+my Azure DevOps. Let's go in a group
+common, script our repos. Here in my group project
+template notice I have a clone button over here
+on the right-hand side. Let's click on clone, and let's generate git
+credentials right here. This will solve that
+error that we got, and let's copy this password. So we comeback over here,
+we got our files and repos, click on requires authentication, click on your username, and then paste this git
+credential password that you got from
+the previous screen. Let's click on input. Let's do the same thing for
+our utilities repo. Click on repos. Click on LQ team utilities. Let's click on import
+repository and go to git utilities. Click on clone. Copy the URL that
+we're going to clone. Paste it into our clone URL. Click on requires authentication. Back over here in
+the group utilities, generate git credentials, and copy the password,
+username and password. Once I have my
+repositories configured, let's click on our overview
+of our DevOps team. Click on the gear. Click on Teams. Click on our LQ DevOps team and add whatever users or groups
+you need to here. You can also click
+on permissions. You've got build admins,
+contributors, endpoint admins, project administrators,
+project validators, we've got readers, and then we've got the default
+project team as well. In summary, our team lead tasks including creating a
+project in Azure DevOps, renaming the team repository
+to TeamUtilities, created a TeamTemplate, importing the GroupUtilities
+and templates, and then setting up security.

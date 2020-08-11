@@ -1,0 +1,20 @@
+So what is the Azure ML service? It's an end-to-end
+machine learning service available on Azure, helps data scientist automate the machine learning life-cycle. You start locally and then train and deploy the cloud you need to, if you do decide to deploy
+in the Cloud and auto-scales and necessary resources for
+training and deployment, and it provides a Python SDK. So what are the steps to
+access the Azure ML resources? You start by creating
+a workspace, then you Create
+and Train a model, you pick your best model, you register it
+with the workspace, and then you use the
+registered model and scoring scripts to deploy Azure
+Container instances, Kubernetes services or an
+IOT end point as well. What we're going to cover in this chapter is
+creating a workspace, and how to implement their resources to create
+and Train a model. So what is a workspace?
+It's a centralized place of reference for all
+of your ML resources, it keeps history of
+training and runs, lets you setup User Roles
+to share and collaborate, and lets you define
+different Compute Targets to run your experiments. Experiments are how you
+automate the process, to build your models. So let's go ahead
+and look at a demo of how to create an ML workspace.

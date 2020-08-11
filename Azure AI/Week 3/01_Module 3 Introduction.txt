@@ -1,0 +1,10 @@
+Hello and welcome to Module 3. In this module, we're going to cover the Cognitive Services APIs that are provided
+by Microsoft and Azure. So we're going to look at and play at random
+what's Computer Vision, the Language API, Search API, the Speech API, and the
+Decision API as well. Recall when you first scope and Ai project
+you're going to decide whether we're going to build your own dedicated Machine
+Learning model or whether you're going to use a pre-canned,
+pre-trained version. That's what Azure Cognitive
+Services provides. It allows developers to add Machine Learning
+features into their applications without much direct AI or data
+science knowledge.

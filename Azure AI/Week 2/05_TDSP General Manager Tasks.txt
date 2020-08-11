@@ -1,0 +1,51 @@
+Welcome. This video implements the group Manager tasks
+that are necessary to set up a project
+and Azure DevOps. So the first thing we
+needed to do is set up an Azure DevOps
+organization for the group. This bring up a Chrome window. As you can see, I'm going to visualstudio.microsoft.com.
+Let's click on sign-in. The first thing that a
+great manager needs to do, is create a new organization, So let's click on create
+new organization. This window comes up. So let's name our Azure
+DevOps organization. We're going to pick Central US. So the second step is to create a default to
+a common group project, and that's where we're
+going to do here. So let's set a project
+name group common, and we're going to
+create project. So the third step, is to set all the
+repositories that we need. So we're going to create a
+group common repository, and we're going to create
+a team repository, and we're going to create a specific project
+repositories as well. Let's click on repos. What
+we're going to do next here, we're going to rename the default group
+common repository to our group project template, which we're going to click
+on Manage repositories, and we're going to
+rename our repository. I'm going to rename it to
+group project template. Since we're on the
+Repositories page, add a new repository, select Git as the type, and the repository name
+that we're going to create is going to
+be group utilities. Then we're going to click Create. So you can see we've added a group utilities on
+the management page. The next step is to import
+the official team data science project templates into the group repositories that
+we just created earlier. So let's click on
+GroupProjectTemplate. So notice, we can
+Cloud to our computer, where we can push an existing repository from the command line, but what I want to do is
+important Repository. The URL that I want to clone is https://github.com/Azure/Azure-TDSP-ProjectTemplate.git. Let's click input. Let's do the same thing for the group
+utilities repository. Again, we're going to
+import our repository. So my clone URL is https://github.com/Azure/Azure-TDSP-Utilities.git. If you need a set of permissions from the group
+common project page, hover over the group common
+name and click on the gear, and then we can come
+over here to teams, and you can see that we have
+a group common one team. We can add different
+functions and add different permissions to the different
+teams that we create. So the permissions that we have include Build Admin,
+Contributors, Project Administrators,
+Projects Validators, Readers, and Group Commoners. So these are the different
+group names that I have, and here's your description
+of each one of them and do. If you needed to add additional
+people to your team, you would add them
+to groups here. So in review, we set up an Azure DevOps
+organization for the Group. We created a template
+project in Azure DevOps. We created the
+required repository to include a project
+template and utilities. We imported the official
+TDSP tablets into the group repositories instead of necessary membership
+and permissions.
