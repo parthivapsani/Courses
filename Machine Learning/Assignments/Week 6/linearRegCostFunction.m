@@ -20,13 +20,12 @@ grad = zeros(size(theta));
 %
 
 
-
-
-
-
-
-
-
+h = X * theta;
+theta = [0; theta(2:end , :)];
+pen_reg = lambda * (dot(theta, theta)) / (2 * m);
+J = 1 / (2 * m) * sum((h - y) .^ 2) + pen_reg;
+pen_grad = (lambda / m) .* theta;
+grad = 1 / m .* ((h - y)' * X)' + pen_grad;
 
 
 
